@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.tests
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.junit;bundle-version="4.12.0",
+ org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",
+ org.eclipse.xtend.lib
+Bundle-Vendor: %providerName
+Export-Package: org.eclipse.emf.diffmerge.patch.tests

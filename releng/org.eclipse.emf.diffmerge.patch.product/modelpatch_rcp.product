@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Model Patch RCP Application" uid="org.eclipse.emf.diffmerge.patch.product.rcp" id="org.eclipse.sdk.ide" application="org.eclipse.ui.ide.workbench" version="0.1.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <license>
+        <url>http://www.eclipse.org/legal/epl-v10.html</url>
+        <text>
+   Copyright (c) 2016-2017 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+    Abel Hegedus, Tamas Borbas, Balazs Grill, Peter Lunk, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.emf.diffmerge.patch.feature.dependencies" version="0.1.0.qualifier"/>
+      <feature id="org.eclipse.emf.diffmerge.patch.feature" version="0.1.0.qualifier"/>
+      <feature id="org.eclipse.emf"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.gmf"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.jdt"/>
+      <feature id="org.eclipse.sdk"/>
+      <feature id="org.eclipse.gmf.runtime.thirdparty"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature"/>
+      <feature id="org.eclipse.emf.mapping.ecore"/>
+      <feature id="org.eclipse.help"/>
+      <feature id="org.eclipse.help.source"/>
+      <feature id="org.eclipse.emf.codegen"/>
+      <feature id="org.eclipse.equinox.p2.core.feature"/>
+      <feature id="org.eclipse.cvs.source"/>
+      <feature id="org.eclipse.rcp.source"/>
+      <feature id="org.eclipse.ecf.core.ssl.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
+      <feature id="org.eclipse.gef"/>
+      <feature id="org.eclipse.draw2d"/>
+      <feature id="org.eclipse.emf.edit"/>
+      <feature id="org.eclipse.ecf.core.ssl.source.feature"/>
+      <feature id="org.eclipse.emf.transaction"/>
+      <feature id="org.eclipse.equinox.p2.user.ui.source"/>
+      <feature id="org.eclipse.emf.codegen.ui"/>
+      <feature id="org.eclipse.ecf.core.source.feature"/>
+      <feature id="org.eclipse.emf.databinding.edit"/>
+      <feature id="org.eclipse.emf.common.source"/>
+      <feature id="org.eclipse.jdt.source"/>
+      <feature id="org.eclipse.emf.codegen.ecore"/>
+      <feature id="org.eclipse.emf.converter"/>
+      <feature id="org.eclipse.emf.edit.ui"/>
+      <feature id="org.eclipse.cvs"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.feature"/>
+      <feature id="org.eclipse.emf.workspace"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature.source"/>
+      <feature id="org.eclipse.emf.ecore.source"/>
+      <feature id="org.eclipse.ecf.filetransfer.source.feature"/>
+      <feature id="org.eclipse.pde"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature"/>
+      <feature id="org.eclipse.equinox.p2.core.feature.source"/>
+      <feature id="org.eclipse.emf.common.ui"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.emf.mapping.ui"/>
+      <feature id="org.eclipse.platform.source"/>
+      <feature id="org.eclipse.pde.source"/>
+      <feature id="org.eclipse.emf.mapping"/>
+      <feature id="org.eclipse.ecf.filetransfer.ssl.source.feature"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature.source"/>
+      <feature id="org.eclipse.emf.codegen.ecore.ui"/>
+      <feature id="org.eclipse.gmf.runtime.notation"/>
+      <feature id="org.eclipse.ecf.core.feature"/>
+      <feature id="org.eclipse.emf.ecore.editor"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature"/>
+      <feature id="org.eclipse.emf.mapping.ecore.editor"/>
+      <feature id="org.eclipse.ecf.filetransfer.httpclient4.source.feature"/>
+      <feature id="org.eclipse.emf.databinding"/>
+      <feature id="org.eclipse.emf.ecore.edit"/>
+      <feature id="org.eclipse.emf.validation"/>
+      <feature id="org.eclipse.e4.rcp.source"/>
+      <feature id="org.eclipse.viatra.query.runtime.feature"/>
+      <feature id="org.eclipse.viatra.transformation.runtime.emf.feature"/>
+      <feature id="org.eclipse.xtext.xbase.lib"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

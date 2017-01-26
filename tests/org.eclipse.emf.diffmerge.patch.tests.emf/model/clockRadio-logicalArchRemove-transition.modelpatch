@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "CLASSNAME": "org.eclipse.emf.diffmerge.patch.api.BaseModelPatchMetadata",
+    "INSTANCE": {
+      "createdAt": "Wed Jan 25 11:39:32 CET 2017"
+    }
+  },
+  "entries": [
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "FIP 1",
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/core/0.8.0#AbstractNamedElement.name"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "ff91ffba-cf01-473d-8e79-934267cc7ce4"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "FIP 3",
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/core/0.8.0#AbstractNamedElement.name"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "ff91ffba-cf01-473d-8e79-934267cc7ce4"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "51e46994-6e1e-42a1-9789-e07f3c6ae624"
+        },
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/activity/0.8.0#AbstractAction.inputs"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "63221c6d-2aad-4fe6-b3b1-7d78d2e6a408"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "c1233ee8-dcb1-4444-b178-7fc50d8287aa"
+        },
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/activity/0.8.0#AbstractAction.outputs"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "7a7d1099-1774-437d-997a-0d6852bb1239"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "0612593c-3566-4777-9c76-b29742e86301"
+        },
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/activity/0.8.0#AbstractAction.inputs"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "3a745064-d600-4e64-8844-321eef57ccb5"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "637eb85d-f3ec-49e2-a503-542f8e67f409"
+        },
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/activity/0.8.0#AbstractAction.inputs"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "2828dd65-6fd2-4256-bf67-cad681d2d2b9"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "b90d5fde-ba88-46fd-92be-5b9c16e30496"
+        },
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/activity/0.8.0#AbstractAction.inputs"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "51b9d007-54e9-4df9-8e2e-cfb2410d9379"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "ff91ffba-cf01-473d-8e79-934267cc7ce4"
+        },
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/activity/0.8.0#AbstractAction.inputs"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "a01fd442-2721-4908-95c5-c3cbaad35e2f"
+        }
+      }
+    }
+  ]
+}

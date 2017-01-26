@@ -1,0 +1,62 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _TpHgMNb2EeWUfPJk5tSGqQ,_3TFCQNb2EeWUfPJk5tSGqQ
+Element-Name: Modelpatch bad patch application test
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _kz1NwNVLEeWM3sIKsYLtUQ
+Runtime-Version: 2.2.0.201611022324
+Save-Time: 1/25/17 10:42 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree 
+    | select "org.eclipse.emf.diffmerge.patch.examples.cps/demo_original.cyberphysicalsystem" | double-click
+get-view "Package Explorer" | get-tree | select "org.eclipse.emf.diffmerge.patch.examples.cps/generated.modelpatch" 
+    | get-menu "Open With/Text Editor" | click
+with [get-editor "generated.modelpatch" | get-text-viewer] {
+    set-caret-pos 18 57
+    key-type BackSpace
+    key-type "NUMPAD_3" 3
+}
+get-button "Save (M1+S)" | click
+get-editor "generated.modelpatch" | close
+with [get-editor "demo_original.cyberphysicalsystem" | get-tree] {
+    get-item "platform:\\/resource\\/org.eclipse.emf.diffmerge.patch.examples.cps\\/demo_original.cyberphysicalsystem" 
+        | click
+    select "platform:\\/resource\\/org.eclipse.emf.diffmerge.patch.examples.cps\\/demo_original.cyberphysicalsystem" 
+        | get-menu "Apply modelpatch" | click
+}
+with [get-window "Modelpatch Application"] {
+    get-button "Browse Workspace..." | click
+    with [get-window "Patch File Selection"] {
+        get-tree | select "org.eclipse.emf.diffmerge.patch.examples.cps/generated.modelpatch"
+        get-button OK | click
+    }
+    with [get-button "Next >"] {
+        click
+        click
+    }
+}
+get-window "Modelpatch Application" | get-tree | get-item "Remove Attribute" | get-property caption 
+    | equals "Remove Attribute" | verify-true
+get-window "Modelpatch Application" | get-tree | get-item "Remove Attribute/context" | get-property "columns[1]" 
+    | equals "simple.cps.host.FirstHostClass3.inst0" | verify-true
+get-window "Modelpatch Application" | get-button Finish | click
+get-button "Save (M1+S)" | click
+with [get-view "Package Explorer" | get-tree] {
+    select "org.eclipse.emf.diffmerge.patch.examples.cps/demo_modified.cyberphysicalsystem" "org.eclipse.emf.diffmerge.patch.examples.cps/demo_original.cyberphysicalsystem"
+    get-menu "Compare With/Each Other as models" | click
+}
+exec-with-options -disableJobWaiting -command {
+	get-window "EMF Diff/Merge" | get-button Finish | click
+	get-window Compare | get-label "There are no differences between the selected inputs." | get-property caption 
+	    | equals "There are no differences between the selected inputs." | verify-true
+	get-window Compare | get-button OK | click
+}
+get-editor "demo_original.cyberphysicalsystem" | close
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

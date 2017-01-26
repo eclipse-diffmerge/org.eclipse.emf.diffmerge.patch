@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2016-2017 Thales Global Services S.A.S.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+         Abel Hegedus, Tamas Borbas, Balazs Grill, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
+ -->
+<feature
+      id="org.eclipse.emf.diffmerge.patch.feature"
+      label="Model Patch Feature"
+      version="0.1.0.qualifier"
+      provider-name="Eclipse Modeling Project"
+      license-feature="org.eclipse.license"
+      license-feature-version="0.0.0">
+
+   <description>
+      EMF Diff/Merge Model Patch feature
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2016-2017 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+    Abel Hegedus, Tamas Borbas, Balazs Grill, Peter Lunk, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="com.google.guava" version="15.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtend.lib"/>
+      <import plugin="com.google.gson" version="2.2.4" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.10.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.diffmerge" version="0.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.change" version="2.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.viatra.query.runtime.base" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.viatra.query.runtime" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit" version="2.11.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.emf.common.ui" version="2.10.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.common" version="2.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.databinding.observable"/>
+      <import plugin="org.eclipse.ui.ide" version="3.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.core.databinding"/>
+      <import plugin="org.eclipse.core.databinding.beans"/>
+      <import plugin="org.eclipse.core.databinding.property"/>
+      <import plugin="org.eclipse.jface.databinding"/>
+      <import plugin="com.ibm.icu"/>
+      <import plugin="org.eclipse.emf.diffmerge.ui" version="0.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.viatra.transformation.runtime.emf"/>
+      <import plugin="org.eclipse.emf" version="2.10"/>
+      <import plugin="org.eclipse.viatra.query.runtime.base.itc"/>
+      <import plugin="org.eclipse.viatra.query.runtime.rete"/>
+      <import plugin="org.eclipse.viatra.query.runtime.rete.recipes"/>
+      <import plugin="org.eclipse.viatra.query.runtime.matchers"/>
+      <import plugin="org.eclipse.viatra.transformation.evm"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch"
+         download-size="0"
+         install-size="0"
+         version="0.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.runtime"
+         download-size="0"
+         install-size="0"
+         version="0.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.examples"
+         download-size="0"
+         install-size="0"
+         version="0.1.0.qualifier"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.ui"
+         download-size="0"
+         install-size="0"
+         version="0.1.0.qualifier"
+         unpack="false"/>
+
+</feature>

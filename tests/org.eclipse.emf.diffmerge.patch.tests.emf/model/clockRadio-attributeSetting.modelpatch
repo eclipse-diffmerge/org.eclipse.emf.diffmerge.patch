@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "createdAt": "Wed Jan 25 11:39:32 CET 2017"
+  },
+  "entries": [
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Set Alarm Time",
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/core/0.8.0#AbstractNamedElement.name"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "a1059496-f909-4aba-a9e1-fa641554d4ca"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Wake Up",
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/core/0.8.0#AbstractNamedElement.name"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "a1059496-f909-4aba-a9e1-fa641554d4ca"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Set Radio",
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/core/0.8.0#AbstractNamedElement.name"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "9cbab07c-b0fd-4edf-af77-0598e48b13be"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Get News",
+        "feature": {
+          "identifier": "http://www.polarsys.org/capella/common/core/0.8.0#AbstractNamedElement.name"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "9cbab07c-b0fd-4edf-af77-0598e48b13be"
+        }
+      }
+    }
+  ]
+}

@@ -1,78 +1,51 @@
-########
-## EDM
-########
-testWk/
-wintest/
-
-
-#################
 ## Eclipse
-#################
 
 *.pydevproject
 .metadata
+plugin.xml_gen
 bin/
+target/
 tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-#local.properties
-#.classpath
-#.settings/
-.loadpath
+MANIFEST.MF_gen
+.metadata
+runtimeInfo
+workspace
+*._trace
+deps/
+diagrams/*
+.idea
+log/
+catalog-v*.xml*.tar.gz
+*.zip
 
-# External tool builders
-.externalToolBuilders/
+### M2E
+org.eclipse.m2e.core.prefs
 
-# Locally stored "Eclipse launch configurations"
-#*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
-
-
-########
-## Sonar
-########
+### Sonar
 org.sonar.ide.eclipse.core.prefs
 
-
-#########
 ## KDiff3
-#########
 *.orig
 
-
-#############
-## Clear Case
-#############
-*.mkelem
-*.contrib
-*.keep
+## R
+.Rhistory
+.RData
+.Rproj.user
 
 
-##########
 ## Windows
-##########
 
-# Windows image file caches
+### Windows image file caches
 Thumbs.db
 ehthumbs.db
 
-# Folder config file
+### Folder config file
 Desktop.ini
 
-# Recycle Bin used on file shares
+### Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-
-#######
-# Linux
-#######
+## Linux
 .DS_Store
 .DS_Store?
 ._*

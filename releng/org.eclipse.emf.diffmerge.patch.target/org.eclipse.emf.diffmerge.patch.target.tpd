@@ -1,0 +1,29 @@
+target "EMF DiffMerge Model Patch"
+environment JavaSE-1.7
+with requirements
+
+location "http://download.eclipse.org/releases/mars/201602261000/" {
+    org.eclipse.equinox.executable.feature.group
+    org.eclipse.platform.sdk
+    org.eclipse.jdt.feature.group
+    org.eclipse.pde.feature.group
+    org.eclipse.sdk.feature.group
+    org.eclipse.platform.feature.group
+    org.eclipse.emf.sdk.feature.group
+    org.eclipse.gmf.feature.group
+    org.eclipse.xtend.feature.group
+    com.google.gson
+    org.junit
+}
+
+location "http://download.eclipse.org/diffmerge/updates/oxygen/official" {
+    org.eclipse.emf.diffmerge.sdk.feature.feature.group
+}
+
+location "http://download.eclipse.org/viatra/updates/integration" {
+    org.eclipse.viatra.transformation.runtime.emf.feature.feature.group
+}
+
+location "http://download.eclipse.org/cbi/updates/license/" {
+    org.eclipse.license.feature.group
+}

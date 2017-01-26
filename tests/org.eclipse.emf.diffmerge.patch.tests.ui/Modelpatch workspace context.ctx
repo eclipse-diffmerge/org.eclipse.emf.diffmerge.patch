@@ -1,0 +1,134 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.workspace
+Element-Name: Modelpatch workspace context
+Element-Type: context
+Element-Version: 2.0
+Id: _3TFCQNb2EeWUfPJk5tSGqQ
+Runtime-Version: 2.2.0.201611022324
+Save-Time: 1/25/17 10:33 AM
+
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/validation.modelpatch-73f410ab-e926-32b5-acf1-9a6fd109893a
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/validation.modelpatch
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADtk8FLwzAUxu/7K0q9
+KEi2TmWwWx0VFDfFDj2Ih2fzWgNtGpK3uTH2v/u6zVlliMqGHjw0oS/9vvclv2bW8Dy/QAIJBH7Xm/E7
+V3qXYRwPwn7EJb+0mcAkV8ahwCIVUqVpgTZDYYCSJwFGiVNw2C8l5tdVqf9qeLi0Ox/Ew3DQi9YNuJZY
+BEIZUtXiDqV3Adprn3hBq3sUdE+OvV409NqtoOMvFHMe55Wdj5qsQsey+8XK2vFboUNil8cRYcR201XQ
+zVG5OoZ8hJXtMyg6K22sMg35fudgLeSPUt7QyOI7JZeV5MQqVWgrgyci02026/HGCshCs6iOr5kYtze0
+oJ0iVWoBSTX5a795rZ9UFpfL7HsT9a9uo3qcpNSEE/o8jlOFyVFwV8ZoRIyskqExvRycawlX8NMS1K4l
+aNTnVZ6fMbjBFC3q5GsMCFi5he0Em09zF/SWkWPiH/0f4RYRftjOLiguoIlyRFmpdPbG1G3uq7TECXsH
+vwF3J2SjHAtO8jWuU7PVi/OHLwuPD435C1BLBwgB/MHZjgEAADcHAABQSwECFAAUAAgICAAAACEAAfzB
+2Y4BAAA3BwAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAA
+zQEAAAAA
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/validation.modelpatch-73f410ab-e926-32b5-acf1-9a6fd109893a--
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_modified.cyberphysicalsystem-a4e5b713-c47f-3b59-91e0-789560179faf
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_modified.cyberphysicalsystem
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADFWMFuozAQvVfqP0Sc
+di8mMaQbRaRVFanaHCqtRKXu1QUvsWRshN2k+fs1YUmABWEMtJyi2PMy8+Z5non38BHT2QGngnC2sRZg
+bs0wC3hIWLSxHv3tbmc93N/eeEEi1tvTG05/7U+CBIj6JyFxfHszU89HTNYXDKgwiq8pE2u1uLH2UiZr
+2z4ej4DHEeBpZP9+3lX2qV+47FPrAAeUJAKDA0EyRXbMQ0xttelfEAkxk+QPwenGkljI52z9bjl3VxCu
+lqvlElr32U4PJcnLKcEiD6sGChInFAOFCtQ28ERSIR+TZEuREPM8XiEQJiRiwRWiBwjIggtCskdBSbyx
+fMmTBIelBUQpD9Ra+MIrmHsuJPBxwFn4U32swNpFim94jw6EpyYZiricH2FEEkQ1gsCVIpXBua4SQz0z
+qIApOP4uI65E+JIiJlRGnFWw+6ODSheyR6I0wtLP+6EB4dTiUSDPgj8iIp946pOIIfrt7vulK1MVUk+k
+byGuViFOuRDPzvs7Yr8XZfjBaHBS9UAgFwNJr8c3k/5jYtKdSWlygIQDaarHfw1N7nWy2sVozd3ELuyk
+t7nkI3you9RQ/rOX/i4CDV2knomejTREDfCRLrSBGm+G7zcLGjEMVD5RKX3OayPG58+1ljQmZWoBZN01
+DZo+LQXjWWAzfL8bVMvRnFbQsN/lqEVJrW3qMINsxuq4wXkWn23nOooN7KAJ5jzRy0eSqdeiXaIbZ4+Y
+BTTMAo6ahWOYhTNqFq5hFsU9xLMv2jKQWt32TbXW8hLaXVpnoDpHlKhrSzYB+r5QBzyO31kWjV+J3Gu2
+d6Z1ILR2Qa1drrGgGtnTOeOdgUbUuZ9OnflZbLnwGlIHdRXbdUmfULKaYtTr4bi864zizkAj6vRI0ZOs
+HnUjS1bHPzoDv1x1mgQ3ep5nt/wDrdb+AlBLBwgva/dJugIAAMUWAABQSwECFAAUAAgICAAAACEAL2v3
+SboCAADFFgAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAA
++QIAAAAA
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_modified.cyberphysicalsystem-a4e5b713-c47f-3b59-91e0-789560179faf--
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/.project-3889f9fd-c57d-3009-b49f-040c0af063c1
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAABVjk0OgjAQRteaeAfS
+vUV3LgpsiBdQD1CHD6zpX9piOL6AqGE375t5MyOqwejshRCVswU78gPLYMk1ynYFu13P+xOryt1W+OCe
+oFQjUlA+jdNjuhFWGpQudByklY/gMC1vVNsahA7cy0QPjkEarxE5+SjyWZlccsbAplLk32pKl0NxhnxF
+917p5uJBn94arUx9wKL94bdi/fkbUEsHCHKVzMWaAAAA+AAAAFBLAQIUABQACAgIAAAAIQBylczFmgAA
+APgAAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVUBQABAAAAAFBLBQYAAAAAAQABAD8AAADZAAAA
+AAA=
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/.project-3889f9fd-c57d-3009-b49f-040c0af063c1--
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/.settings/org.eclipse.core.resources.prefs-7855d585-0689-38e4-ad76-7a94bb480cf4
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/.settings/org.eclipse.core.resources.prefs
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAABLTc7JLChO1SsoSk1L
+LUrNS04t1itLLSrOzM+zNeTlAgrkp2TmpevbFBTlZ6Uml9jZhoa46VrwcgEAUEsHCC67yTc6AAAAOQAA
+AFBLAQIUABQACAgIAAAAIQAuu8k3OgAAADkAAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVUBQAB
+AAAAAFBLBQYAAAAAAQABAD8AAAB5AAAAAAA=
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/.settings/org.eclipse.core.resources.prefs-7855d585-0689-38e4-ad76-7a94bb480cf4--
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_corrected.cyberphysicalsystem-21b93145-c100-39ab-8ec6-46f24d0240a2
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_corrected.cyberphysicalsystem
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADNWMGO2jAQvVfqP0Q5
+tRebOGGLUOhqhbQqh5UqgbS9eoM3WEpsK/bC8vd1QAEWxcQOpt0bIjPzZp5f3hjS+/eyCNakkpSzSRiB
+QRgQlvElZfkkfJhPZ7Pw/ufXL2km5Hi6fSHV79VW0gwX861UpAzeSzo+pKM6XRdkcqy/n4QrpcQYws1m
+A3iZA17l8M/TrAnRJQ8h+hEgWUGFJGBNsaowLPmSFFAHhQFdEqboKyXVJFREqqf60d1wkIwQGg1HwyEK
+dY9BkGIhFltB5IcMSUtREKArAf0cPNJKqgchpgWWcrBP1KmUSYVZ5pIL6hw9MS4KnmFFlgv+IWPFpQJz
+knG2/KU/niRFIWxwX8gKrymvHGBlqUEpo4riwiIWHKfUeHpK5TTkeQVdg7+pnGuFLCrMpG6DM/eCoGZO
+4Sonal63ZJUVa7IztdPaBlP1yKs5zRkuvt19PzDqscPYvcPE1GF82mEK98dw7bFEpzX7lUC+TxYBLW9n
+3iITbz9uwVvse+gYKOQ+NPqnQydH04GN6+xtEza+ae+ie1vraaNnyf19FLn56DnuRSNtCXZ10q4S7tpr
+r9j5xrWm3U59rXCR97kjoJJec99guqtstL1i54Y0yOuaRWjqpGMTGg7cyHOHAdUv/EUH2jnCzuOOhmBv
+QW3ZjQcxfbWcCdtweD1m5IYZ+cBEbpjIB2bshhn7wEzcMJsFmcKDAF30eL6hHAXZuuAuKNIUn/GyfGO0
+XqTPVK0s6Q6sxGcVhayiBlZRiasMDD+33FisL6NCFDWHtWFa/gzsRXzySYl3fv8M9zM34lEH8YaL4w0l
+71XMdmfthfkLdmuK78WiHT92+vXJoh/9Xlggpvj/rkU7ru1YHLRuxBQa/g3Uz/4CUEsHCLDBGDWVAgAA
+URQAAFBLAQIUABQACAgIAAAAIQCwwRg1lQIAAFEUAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVU
+BQABAAAAAFBLBQYAAAAAAQABAD8AAADUAgAAAAA=
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_corrected.cyberphysicalsystem-21b93145-c100-39ab-8ec6-46f24d0240a2--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACdkl9LwzAUxd8Fv0PI
+u4lOBCmbexgqChOHynwbWXrbxTV/TLK1+/bebW0t4hR9a5Jzfvf2ntsfVroga/BBWTOgZ+yUEjDSpsrk
+A7qK2cklHV4dH/WtzxnIQrkAzEsXI5OxYqX1y+CEhGTafI2siVBFUmmVtNzelouVTEjwfkAXMbqE87Is
+mdU5Qzh/Hd81kl9qtfZGs7XvdBx1vNVRYoRG9dimUDgR5YK0b0Tu26REpQM6O3++GU0e5r1rmL5kj/fL
+i/h0+z6h+OOE9HdSE3cHPDpv30DGUNO7zYLOWKqyTIPPge1KMqiEdgUEJl2gNQMpmcK7GsFqJOXfv6eg
+7Uxa71EDKZObOXi32AQlRRE2IYL+0akxzUz9w2i9ypURxV+MORjwYtumbsd+SLsWhUpFxA05JLZFiivU
+jClAjLiXnTF+AXazwHnh9kCwKy9x+s5DFrpsXsObWHmT6z50/pl6n/91+dH0AVBLBwj2Qbf1ZwEAAFkD
+AABQSwECFAAUAAgICAAAACEA9kG39WcBAABZAwAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUA
+AQAAAABQSwUGAAAAAAEAAQA/AAAApgEAAAAA
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_original.cyberphysicalsystem-b52bf9a3-31be-3eac-a003-260193e5c455
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_original.cyberphysicalsystem
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADNWF1v2jAUfZ+0/xDl
+aXuxiRM6hMKqCqkaD5UmgdS9usENlhLbil0o/34OKEBRTOxgtr4hcs/9OD4+N5Dev5dFsCaVpJxNwggM
+woCwjC8pyyfhw3w6m4X3P79+STMhx9PtC6l+r7aSZriYb6UiZfBe0vEBjmq4TsjkWH8/CVdKiTGEm80G
+8DIHvMrhn6dZE6JTHkL0I0CyggpJwJpiVWFY8iUpoA4KA7okTNFXSqpJqIhUT/Wju+EgGSE0Go6GQxTq
+HoMgxUIstoLIDwhJS1EQoDMB/Rw80kqqByGmBZZysAdqKGVSYZa5YEGN0RPjouAZVmS54B8QKy4VmJOM
+s+Uv/fEEFIWwqftCVnhNeeVQVpa6KGVUUVxYxILjlLqenlI5DXmeQefgbyrnWiGLCjOp2+DMPSGomVO4
+yoma1y1ZoWJNdqZ2Wttgqh55Nac5w8W3u+8HRj12GLt3mJg6jE87TOH+GK49lug0Z78UyPfJIqDl7cxb
+ZOLtxy14i30PHQOF3IdG/3To5Gg6sHGdvW3CxjftXXRvaz1t9Azc30eRm4+e171opC3Brk7alcJde+0Z
+O29cK8xOff567LggrbDb2YKhnO+5I6CSXmdzg+musvr2jJ1b3HAFvOsLdW5rw4Ebee4wydqULrrkzrV2
+Pnw0LXubbEM3Psn06+9M2IbD62tGbjUjHzWRW03ko2bsVjP2UTNxq9ks8RQeBOiix/Mt6ijI1iV8QZGm
++IyX5Ruj9bJ/pmplSXdgJT6rKGQVNbCKSlxlYPhJ6MZivRmFKGoOa8O0/Knai/jkkxLvfP8M75BuxKMO
+4g0vtzeUvFcx2521F+Yv2K0pvheLdvzY6dcni370e2GBmOL/uxbtuLZjcdC6EVNo+MdSP/sLUEsHCE4N
+RlubAgAA9RQAAFBLAQIUABQACAgIAAAAIQBODUZbmwIAAPUUAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29u
+dGVudFVUBQABAAAAAFBLBQYAAAAAAQABAD8AAADaAgAAAAA=
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/demo_original.cyberphysicalsystem-b52bf9a3-31be-3eac-a003-260193e5c455--
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/generated.modelpatch-b1e96370-f9e1-35c2-a61f-4eb34c29e975
+Content-Type: q7/binary
+Entry-Name: contents/org.eclipse.emf.diffmerge.patch.examples.cps/generated.modelpatch
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADtmFFv2jAQx9/5FFH2
+Opkk7dSJt4xmGtNgE0Hrw7QHz7mApcSx4kvVquK770zblFWog3VJWpSXBA75f+f/z7bw3Qwcx80BecKR
+uyPnhr5TZPwljONZOI0o5BblkoHIpDbAIE9ZItM0h3IJTHMUK8a1ZB+4gWmRQPbNhqb3gm9v5SazeBHO
+xlGdgGKiBI6QhGhTXEDifObKCd45vjcKzkb+e2ccLZzA88/czYg1PddWzgWFpQRDw35sfqkVDyo6RFL5
+VSFEJHd9V+juUil6ybMKrKyRuc6ACW3YqjDIPsrS4Cf6NM64MR6TyqBXq9HIlGZZlfCHHIVlQtOQqYTS
+qq4Q9Wg43K75UnIs+TC3ng4p3RubZELqXAlgisIT7daK662MiSxBoCyUVZ5H06/fo+2CRKEQrvDpgvab
+5kP6wfb7rphWucwrpaRaNuJ8qHUmBbeW1gDohdCK/1zrW/upjMbdn0MKJdAE93IfOY08cCXFQAYkj5aS
+v9vJRgnyLCuEPYEWRc/xcI5/OxEaPwJFkeeVslThQuJqd2qpErgi+ZOGz8edq/oVot1jkTYOlj9sVvM0
+Va8Lqv7ro9pv2B7ty0EbdIE26NEeK9qTHm0LaE+7QHvaoz0I7eJawyaZ5dvxn6dHHjRCMsogpxr240je
+/N8NdIztl44aAE1vjuc3AMLz8/72f0RXxGfybPvW/49t0RgLrSF5cW3RtncTPX8O1r8BUEsHCN+Zk/Mg
+AgAA7RgAAFBLAQIUABQACAgIAAAAIQDfmZPzIAIAAO0YAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVu
+dFVUBQABAAAAAFBLBQYAAAAAAQABAD8AAABfAgAAAAA=
+------=_contents/org.eclipse.emf.diffmerge.patch.examples.cps/generated.modelpatch-b1e96370-f9e1-35c2-a61f-4eb34c29e975--

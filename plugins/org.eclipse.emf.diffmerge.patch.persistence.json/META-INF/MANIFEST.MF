@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.persistence.json;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: com.google.gson;bundle-version="2.2.4",
+ org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",
+ com.google.guava;bundle-version="15.0.0"
+Export-Package: org.eclipse.emf.diffmerge.patch.serializer.gson
+Bundle-ClassPath: .

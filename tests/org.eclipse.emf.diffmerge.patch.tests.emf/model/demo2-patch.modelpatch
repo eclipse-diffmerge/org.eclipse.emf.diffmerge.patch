@@ -1,0 +1,914 @@
+{
+  "metadata": {
+    "CLASSNAME": "org.eclipse.emf.diffmerge.patch.api.BaseModelPatchMetadata",
+    "INSTANCE": {
+      "createdAt": "Wed Jan 25 11:39:32 CET 2017"
+    }
+  },
+  "entries": [
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "waitForSignal(7)",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.action"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s2.t1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "0",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.availableCpu"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst4"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.SecondHostClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0.t1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s3.t2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s1.t4"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.communicateWith"
+        },
+        "index": 1,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.host.SecondHostClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "index": 0,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.host.SecondHostClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s2.t1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2.t3"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2.t0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "index": 0,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2.t3"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "index": 1,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s2.t1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "index": 0,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#StateMachine.states"
+        },
+        "index": 2,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s2.t1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2.t3"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostType"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.ThirdHostClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#StateMachine"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdHostClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.ThirdHostClass0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#CyberPhysicalSystem.hostTypes"
+        },
+        "index": 2,
+        "direction": "ADD",
+        "context": {
+          "identifier": "testModel6504822858552"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#CyberPhysicalSystem.appTypes"
+        },
+        "index": 2,
+        "direction": "ADD",
+        "context": {
+          "identifier": "testModel6504822858552"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType.behavior"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType.instances"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType.instances"
+        },
+        "index": 2,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdHostClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostType.instances"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.ThirdHostClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType.instances"
+        },
+        "index": 1,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#StateMachine.states"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#StateMachine.states"
+        },
+        "index": 1,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1.t0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0.t0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#StateMachine.initial"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.SecondHostClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdHostClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.dependOn"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdHostClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "index": 1,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdHostClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.sm0.s3.t2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdHostClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "index": 0,
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.SecondHostClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "1",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostType.defaultHdd"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.ThirdHostClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Stopped",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.state"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "user",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.dbUser"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "password",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.dbPassword"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst1"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Some other action",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.action"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s1.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Some action",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.action"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.sm0.s0.t0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "2",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.availableCpu"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst4"
+        }
+      }
+    }
+  ]
+}

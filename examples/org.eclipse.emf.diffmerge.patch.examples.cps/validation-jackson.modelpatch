@@ -1,0 +1,55 @@
+{
+  "ModelPatch" : {
+    "Entries" : [ {
+      "AttributeEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#Transition.action"
+        },
+        "Index" : null,
+        "Value" : "waitForSignal(7)"
+      }
+    }, {
+      "ReferenceEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "Index" : null,
+        "Target" : {
+          "Identifier" : "simple.cps.app.SecondAppClass0.sm0.s1"
+        }
+      }
+    }, {
+      "ReferenceEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.app.SecondAppClass0.sm0.s0"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "Index" : 1,
+        "Target" : {
+          "Identifier" : "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        }
+      }
+    }, {
+      "ElementEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        },
+        "ElementType" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#Transition"
+        }
+      }
+    } ]
+  }
+}

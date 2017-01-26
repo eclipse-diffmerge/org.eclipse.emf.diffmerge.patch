@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
+<target name="EMF DiffMerge Model Patch" sequenceNumber="1485178630">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.200.v20150602-1417"/>
+      <unit id="org.eclipse.platform.sdk" version="4.5.2.M20160212-1500"/>
+      <unit id="org.eclipse.jdt.feature.group" version="3.11.2.v20160212-1500"/>
+      <unit id="org.eclipse.pde.feature.group" version="3.11.2.v20160212-1500"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.5.2.v20160212-1500"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.5.2.v20160212-1500"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.11.2.v20160208-0841"/>
+      <unit id="org.eclipse.gmf.feature.group" version="1.9.0.201506060219"/>
+      <unit id="org.eclipse.xtend.feature.group" version="2.1.0.v201505260349"/>
+      <unit id="com.google.gson" version="2.2.4.v201311231704"/>
+      <unit id="org.junit" version="4.12.0.v201504281640"/>
+      <repository location="http://download.eclipse.org/releases/mars/201602261000/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.diffmerge.sdk.feature.feature.group" version="0.7.0.v20161114-0851"/>
+      <repository location="http://download.eclipse.org/diffmerge/updates/oxygen/official"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201701201731"/>
+      <repository location="http://download.eclipse.org/viatra/updates/integration"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.license.feature.group" version="1.0.1.v20140414-1359"/>
+      <repository location="http://download.eclipse.org/cbi/updates/license/"/>
+    </location>
+  </locations>
+  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+</target>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
+<stringAttribute key="bad_container_name" value="\org.eclipse.emf.diffmerge.patch.all.tests\launc"/>
+<listAttribute key="com.mountainminds.eclemma.core.SCOPE_IDS">
+<listEntry value="=org.eclipse.emf.diffmerge.patch.gui/xtend-gen"/>
+<listEntry value="=com.incquerylabs.util.identifier/src"/>
+<listEntry value="=org.eclipse.emf.diffmerge.patch.emf/src"/>
+<listEntry value="=org.eclipse.emf.diffmerge.patch/src"/>
+<listEntry value="=org.eclipse.emf.diffmerge.patch.emf/xtend-gen"/>
+<listEntry value="=org.eclipse.emf.diffmerge.patch.gui/src"/>
+<listEntry value="=org.eclipse.emf.diffmerge.patch/xtend-gen"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/org.eclipse.emf.diffmerge.patch.tests.all/xtend-gen/org/eclipse/emf/diffmerge/patch/tests/all/RunAllTestSuite.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value=""/>
+<booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
+<stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.emf.diffmerge.patch.tests.all.RunAllTestSuite"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.eclipse.emf.diffmerge.patch.tests.all"/>
+</launchConfiguration>

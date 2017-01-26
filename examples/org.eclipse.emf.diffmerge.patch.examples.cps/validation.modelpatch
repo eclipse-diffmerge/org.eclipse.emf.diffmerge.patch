@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "CLASSNAME": "org.eclipse.emf.diffmerge.patch.api.BaseModelPatchMetadata",
+    "INSTANCE": {
+      "createdAt": "Wed Jan 25 10:31:54 CET 2017"
+    }
+  },
+  "entries": [
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "waitForSignal(7)",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.action"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s1"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition.targetState"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#State.outgoingTransitions"
+        },
+        "index": 1,
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#Transition"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.SecondAppClass0.sm0.s0.t2"
+        }
+      }
+    }
+  ]
+}

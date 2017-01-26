@@ -1,0 +1,20 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Modelpatch application and reverse application test suite
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _bB1GcNTCEeWpt76DqXjygg
+Manually-Ordered: true
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 2/16/16 4:32 PM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_QsyGkNS0EeWpt76DqXjygg	// kind: 'test' name: 'Modelpatch application test' path: 'Modelpatch application test.test'
+_u1dT4NTAEeWpt76DqXjygg	// kind: 'test' name: 'Modelpatch application (direct) test' path: 'Modelpatch application (direct) test.test'
+_VrhxINS3EeWpt76DqXjygg	// kind: 'test' name: 'Modelpatch reverse application test' path: 'Modelpatch reverse application test.test'
+_9kHdgNS8EeWpt76DqXjygg	// kind: 'test' name: 'Modelpatch reverse application (direct) test' path: 'Modelpatch reverse application (direct) test.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

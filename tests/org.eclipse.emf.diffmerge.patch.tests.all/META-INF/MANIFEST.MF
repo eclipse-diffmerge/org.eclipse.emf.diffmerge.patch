@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.tests.all
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",
+ org.eclipse.emf.diffmerge.patch.runtime;bundle-version="[0.1.0,0.2.0)",
+ org.eclipse.emf.diffmerge.patch.tests;bundle-version="[0.1.0,0.2.0)",
+ org.eclipse.emf.diffmerge.patch.tests.emf;bundle-version="[0.1.0,0.2.0)",
+ org.eclipse.emf.diffmerge.patch.tests.persistence.json;bundle-version="0.1.0",
+ org.eclipse.emf.diffmerge.patch.ui;bundle-version="[0.1.0,0.2.0)",
+ org.junit;bundle-version="4.12.0"
+Import-Package: org.apache.log4j;version="1.2.0"
+Bundle-Vendor: %providerName
+

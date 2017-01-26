@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "CLASSNAME": "org.eclipse.emf.diffmerge.patch.api.BaseModelPatchMetadata",
+    "INSTANCE": {
+      "createdAt": "Wed Jan 25 11:39:32 CET 2017"
+    }
+  },
+  "entries": [
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Running",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.state"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Stopped",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.state"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.FirstAppClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "direction": "ADD",
+        "context": {
+          "identifier": "simple.cps.host.SecondHostClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostType.instances"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.host.FirstHostClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#HostInstance"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.host.FirstHostClass0.inst0"
+        }
+      }
+    }
+  ]
+}

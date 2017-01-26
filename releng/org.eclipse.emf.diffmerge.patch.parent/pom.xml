@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-2017 Thales Global Services S.A.S. All rights reserved.
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v1.0 which accompanies this distribution,
+  and is available at http://www.eclipse.org/legal/epl-v10.html Contributors:
+  Abel Hegedus, Tamas Borbas, Balazs Grill, Daniel Segesdi (IncQuery Labs Ltd.)
+  - initial API and implementation -->
+
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.eclipse.emf.diffmerge.patch</groupId>
+  <artifactId>org.eclipse.emf.diffmerge.patch.parent</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <name>Model Patcher</name>
+  <url></url>
+  <packaging>pom</packaging>
+    <properties>
+    <tycho.version>0.24.0</tycho.version>
+    <xtend.compiler.version>2.10.0</xtend.compiler.version>
+    <viatra.repository.url>http://download.eclipse.org/viatra/updates/integration</viatra.repository.url>
+    <viatra.compiler.version>1.6.0-SNAPSHOT</viatra.compiler.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.skippedModules></sonar.skippedModules>
+    <rcptt.version>2.0.0</rcptt.version>
+    <!-- Composite site related properties -->
+    <patch.updates.label>EMF DiffMerge Model Patch</patch.updates.label>
+    <patch.updates.dir>updates</patch.updates.dir>
+    <patch.download.area>target/composite</patch.download.area>
+  </properties>
+  <modules>
+    <!-- Target platform -->
+    <module>../org.eclipse.emf.diffmerge.patch.target</module>
+
+    <module>../../plugins</module>
+    <module>../../examples</module>
+    <module>../../tests</module>
+    <module>../../features</module>
+    <module>../org.eclipse.emf.diffmerge.patch.update</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>gui.test</id>
+      <modules>
+        <!-- Product -->
+        <module>../org.eclipse.emf.diffmerge.patch.product</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>license-check</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <!-- license -->
+          <plugin>
+            <groupId>com.mycila</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <configuration>
+              <inlineHeader>
+                All rights reserved. This program and the accompanying materials
+                are made available under the terms of the Eclipse Public License
+                v1.0
+                which accompanies this distribution, and is available at
+                http://www.eclipse.org/legal/epl-v10.html
+              </inlineHeader>
+              <useDefaultExcludes>true</useDefaultExcludes>
+              <failIfMissing>true</failIfMissing>
+              <strictCheck>false</strictCheck>
+              <aggregate>true</aggregate>
+              <includes>
+                <include>**/*.java</include>
+                <include>**/*.xtend</include>
+              </includes>
+              <excludes>
+                <exclude>**/src/site/**</exclude>
+                <exclude>**/target/**</exclude>
+                <exclude>**/src-gen/**</exclude>
+                <exclude>**/xtend-gen/**</exclude>
+              </excludes>
+              <mapping>
+                <xtend>JAVADOC_STYLE</xtend>
+              </mapping>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>process-sources</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-packaging-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <strictBinIncludes>false</strictBinIncludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <target>
+            <artifact>
+              <groupId>org.eclipse.emf.diffmerge.patch</groupId>
+              <artifactId>org.eclipse.emf.diffmerge.patch.target</artifactId>
+              <version>0.1.0-SNAPSHOT</version>
+              <!-- TODO: What should be here? -->
+              <relativePath>org.eclipse.emf.diffmerge.patch.target/pom.xml</relativePath>
+            </artifact>
+          </target>
+          <!-- <environments> -->
+          <!-- <environment> -->
+          <!-- <os>win32</os> -->
+          <!-- <ws>win32</ws> -->
+          <!-- <arch>x86_64</arch> -->
+          <!-- </environment> -->
+          <!-- <environment> -->
+          <!-- <os>linux</os> -->
+          <!-- <ws>gtk</ws> -->
+          <!-- <arch>x86_64</arch> -->
+          <!-- </environment> -->
+          <!-- </environments> -->
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <excludes>
+            <exclude>**/queries/*.java</exclude>
+          </excludes>
+          <failIfNoTests>false</failIfNoTests>
+          <skipTests>false</skipTests>
+        </configuration>
+        <!-- <executions> <execution> <id>unit-test</id> <goals> <goal>test</goal>
+          </goals> <phase>test</phase> <configuration> <excludes> <exclude>**/IntegrationTest*.java</exclude>
+          </excludes> <includes> <include>**/*Test.java</include> </includes> </configuration>
+          </execution> </executions> -->
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>xtend-maven-plugin</artifactId>
+          <version>${xtend.compiler.version}</version>
+          <configuration>
+            <!-- need to prefix by basedir to generate to currently built module -->
+            <outputDirectory>${basedir}/xtend-gen</outputDirectory>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>
+                <goal>testCompile</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <plugin>
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>3.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <repositories>
+    <repository>
+      <id>viatra.update</id>
+      <layout>p2</layout>
+      <url>${viatra.repository.url}</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>viatra-snapshots</id>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <url>https://repo.eclipse.org/content/repositories/viatra-snapshots/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>rcptt-releases</id>
+      <name>RCPTT Maven repository</name>
+      <url>https://repo.eclipse.org/content/repositories/rcptt-releases
+      </url>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+</project>

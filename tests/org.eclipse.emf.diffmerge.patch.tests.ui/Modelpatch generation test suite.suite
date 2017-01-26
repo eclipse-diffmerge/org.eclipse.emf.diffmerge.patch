@@ -1,0 +1,18 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Modelpatch generation test suite
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _RwZ2wNVkEeWM3sIKsYLtUQ
+Manually-Ordered: true
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 2/22/16 9:11 AM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_Stt9MNSsEeWpt76DqXjygg	// kind: 'test' name: 'Modelpatch generation test' path: 'tests/Modelpatch generation test.test'
+_WwsRINSxEeWpt76DqXjygg	// kind: 'test' name: 'Modelpatch generation cancel test' path: 'tests/Modelpatch generation cancel test.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2016-2017 Thales Global Services S.A.S.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+        Abel Hegedus, Tamas Borbas, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
+ -->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.diffmerge.patch.ui.examples"
+            name="Modelpatch examples"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/org.eclipse.emf.diffmerge.patch.ui.examples"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            icon="icons/genproject.gif"
+            id="org.eclipse.emf.diffmerge.patch.examples.CPSExample"
+            name="CPS Example"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.emf.common.ui.examples">
+      <example
+            pageImage="icons/genproject.gif"
+            wizardID="org.eclipse.emf.diffmerge.patch.examples.CPSExample">
+         <projectDescriptor
+               contentURI="contents/org.eclipse.emf.diffmerge.patch.examples.cps.zip"
+               name="org.eclipse.emf.diffmerge.patch.examples.cps">
+         </projectDescriptor>
+      </example>
+   </extension>
+
+</plugin>

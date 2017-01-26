@@ -1,0 +1,41 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Start EMF Diff/Merge
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _RDsWkM5lEeWUivmIrrocpQ
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 2/16/16 2:38 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Package Explorer" | get-tree | get-menu "New/Example..." | click
+with [get-window "New Example"] {
+    get-tree | select "CPS Example"
+    get-button "Next >" | click
+    get-button Finish | click
+}
+with [get-view "Package Explorer" | get-tree] {
+    select "org.eclipse.emf.diffmerge.patch.examples.cps/demo_modified.cyberphysicalsystem" "org.eclipse.emf.diffmerge.patch.examples.cps/demo_original.cyberphysicalsystem"
+    get-menu "Compare With/Each Other as models" | click
+}
+get-window "EMF Diff/Merge" | get-button Finish | click
+with [get-editor "Compare ('demo_modified' - 'demo_original')"] {
+    get-tree 
+        | select "Cyber Physical System testModel6504822858552 (10)/Application Type simple.cps.app.FirstAppClass0 (2)/Application Instance simple.cps.app.FirstAppClass0.inst0 (2)"
+    get-table | select state
+}
+get-editor "Compare ('demo_modified' - 'demo_original')" | get-table -after [get-label Details] -index 1 
+    | get-item Stopped | get-property caption | equals Stopped | verify-true
+get-editor "Compare ('demo_modified' - 'demo_original')" | close
+get-view "Package Explorer" | get-tree | select "org.eclipse.emf.diffmerge.patch.examples.cps" | get-menu Delete | click
+with [get-window "Delete Resources"] {
+    get-button "Delete project contents on disk (cannot be undone)" | check
+    get-button OK | click
+}
+get-menu "File/Exit" | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

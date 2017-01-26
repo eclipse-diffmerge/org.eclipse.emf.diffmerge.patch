@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.emf.diffmerge.patch.feature_0.1.0.qualifier.jar" id="org.eclipse.emf.diffmerge.patch.feature" version="0.1.0.qualifier">
+      <category name="org.eclipse.emf.diffmerge.patch.category"/>
+   </feature>
+   <category-def name="org.eclipse.emf.diffmerge.patch.category" label="EMF DiffMerge Model Patch"/>
+</site>

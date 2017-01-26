@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "CLASSNAME": "org.eclipse.emf.diffmerge.patch.api.BaseModelPatchMetadata",
+    "INSTANCE": {
+      "createdAt": "Wed Jan 25 11:39:32 CET 2017"
+    }
+  },
+  "entries": [
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.AttributeEntry",
+      "INSTANCE": {
+        "value": "Stopped",
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance.state"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType.instances"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ReferenceEntry",
+      "INSTANCE": {
+        "target": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        },
+        "feature": {
+          "identifier": "http://org.eclipse.viatra/model/cps#CyberPhysicalSystem.appTypes"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "testModel6504822858552"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationInstance"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0.inst0"
+        }
+      }
+    },
+    {
+      "CLASSNAME": "org.eclipse.emf.diffmerge.patch.ElementEntry",
+      "INSTANCE": {
+        "type": {
+          "identifier": "http://org.eclipse.viatra/model/cps#ApplicationType"
+        },
+        "direction": "REMOVE",
+        "context": {
+          "identifier": "simple.cps.app.ThirdAppClass0"
+        }
+      }
+    }
+  ]
+}

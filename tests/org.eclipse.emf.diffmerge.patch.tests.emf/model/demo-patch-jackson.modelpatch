@@ -1,0 +1,63 @@
+{
+  "ModelPatch" : {
+    "Entries" : [ {
+      "AttributeEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.app.FirstAppClass0.inst0"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#ApplicationInstance.state"
+        },
+        "Value" : "Running"
+      }
+    }, {
+      "AttributeEntry" : {
+        "ChangeType" : "ADD",
+        "Context" : {
+          "Identifier" : "simple.cps.app.FirstAppClass0.inst0"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#ApplicationInstance.state"
+        },
+        "Value" : "Stopped"
+      }
+    }, {
+      "ReferenceEntry" : {
+        "ChangeType" : "ADD",
+        "Context" : {
+          "Identifier" : "simple.cps.host.SecondHostClass0.inst0"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#HostInstance.applications"
+        },
+        "Target" : {
+          "Identifier" : "simple.cps.app.FirstAppClass0.inst0"
+        }
+      }
+    }, {
+      "ReferenceEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.host.FirstHostClass0"
+        },
+        "Feature" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#HostType.instances"
+        },
+        "Target" : {
+          "Identifier" : "simple.cps.host.FirstHostClass0.inst0"
+        }
+      }
+    }, {
+      "ElementEntry" : {
+        "ChangeType" : "REMOVE",
+        "Context" : {
+          "Identifier" : "simple.cps.host.FirstHostClass0.inst0"
+        },
+        "ElementType" : {
+          "Identifier" : "http://org.eclipse.viatra/model/cps#HostInstance"
+        }
+      }
+    } ]
+  }
+}
