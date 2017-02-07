@@ -42,34 +42,35 @@ class ModelpatchGenerationHandler extends AbstractHandler {
       ex.printStackTrace
     }
 
-      val part = HandlerUtil.getActiveEditorInput(event)
-        if (part instanceof EMFDiffMergeEditorInput){
-            val diffNode = part.compareResult
-            val comparison = diffNode.actualComparison
-        if (selection instanceof ComparisonSelection){
-            val diffs = selection.getDiffsToMerge(false, diffNode)
-            if(!diffs.empty) {
-                    diffs.generatePatch(shell, workbench, selection)
-            }
-            } else {
-                comparison.generatePatch(shell, workbench, selection)
-            }
+    val part = HandlerUtil.getActiveEditorInput(event)
+    if (part instanceof EMFDiffMergeEditorInput) {
+      val diffNode = part.compareResult
+      val comparison = diffNode.actualComparison
+      if (selection instanceof ComparisonSelection) {
+        val diffs = selection.getDiffsToMerge(false, diffNode)
+        if (!diffs.empty) {
+          diffs.generatePatch(shell, workbench, selection)
         }
-        return null
+      } else {
+        comparison.generatePatch(shell, workbench, selection)
+      }
+    }
+    return null
   }
 
   public def Object generatePatch(Object diff, Shell shell, IWorkbench workbench, IStructuredSelection selection) {
     extension val DialogFactory factory = new DialogFactory(shell)
     val SerializerProvider serializerProvider = new SerializerProvider
     try {
-      val path = openSaveFileDialog(workbench, selection,"modelpatch")
-      if (path != null) {
+      val serializer = serializerProvider.getSelectedSerializer(serializationType)
+      val path = openSaveFileDialog(workbench, selection, serializer.preferredFileExtension)
+      if (path !== null) {
         val modelPatchRecorder = new ModelPatchRecorder
         val generatedPatch = modelPatchRecorder.generateModelPatch(diff)
         val patchFile = path.location.toFile
-        serializerProvider.getSelectedSerializer(serializationType).serialize(generatedPatch,patchFile)
+        serializer.serialize(generatedPatch, patchFile)
 
-        if(isFileGenerated(patchFile)==true) {
+        if (isFileGenerated(patchFile) == true) {
           openModelPatchEditor(workbench.activeWorkbenchWindow, path);
         } else {
           openErrorDialog(MODELPATCH_GENERATION_ERROR_TITLE, '''File cannot be created at the following path: «path»''')
@@ -78,7 +79,8 @@ class ModelpatchGenerationHandler extends AbstractHandler {
         openInformationDialog("Model Patch Generation Information", "No file has been selected!")
       }
     } catch (ModelPatchException ex) {
-      openErrorDialog(MODELPATCH_GENERATION_ERROR_TITLE, "Modelpatch generation finished with errors!", ex, "org.eclipse.emf.diffmerge.patch")
+      openErrorDialog(MODELPATCH_GENERATION_ERROR_TITLE, "Modelpatch generation finished with errors!", ex,
+        "org.eclipse.emf.diffmerge.patch")
     } catch (ClassCastException ex) {
       openErrorDialog(MODELPATCH_GENERATION_ERROR_TITLE, "Patch generation only works from EMF Diff/Merge!")
     } catch (Exception ex) {

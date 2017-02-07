@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.diffmerge.patch:EModelPatch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.emf.diffmerge.patch="http://www.eclipse.org/emf/diffmerge/1.0.0/patch">
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EAttributeEntry" direction="REMOVE" context="//@elements.0" feature="//@features.0" value="simple.cps.host.FirstHostClass0.inst0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EAttributeEntry" direction="REMOVE" context="//@elements.1" feature="//@features.1" value="Running"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.1" feature="//@features.2" target="//@elements.2"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.3" feature="//@features.3" target="//@elements.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.2" feature="//@features.4" target="//@elements.1"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.4" feature="//@features.3" target="//@elements.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.5" feature="//@features.3" target="//@elements.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.6" feature="//@features.3" target="//@elements.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.2" feature="//@features.3" target="//@elements.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" direction="REMOVE" context="//@elements.7" feature="//@features.5" target="//@elements.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EElementEntry" direction="REMOVE" context="//@elements.0" type="//@types.0"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" context="//@elements.6" feature="//@features.4" target="//@elements.1"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EReferenceEntry" context="//@elements.1" feature="//@features.2" target="//@elements.6"/>
+  <entries xsi:type="org.eclipse.emf.diffmerge.patch:EAttributeEntry" context="//@elements.1" feature="//@features.1" value="Stopped"/>
+  <metadata createdAt="Wed Jan 25 11:39:32 CET 2017"/>
+  <elements targetIdentifier="simple.cps.host.FirstHostClass0.inst0"/>
+  <elements targetIdentifier="simple.cps.app.FirstAppClass0.inst0"/>
+  <elements targetIdentifier="simple.cps.host.SecondHostClass0.inst1"/>
+  <elements targetIdentifier="simple.cps.host.SecondHostClass0.inst2"/>
+  <elements targetIdentifier="simple.cps.host.SecondHostClass0.inst3"/>
+  <elements targetIdentifier="simple.cps.host.SecondHostClass0.inst4"/>
+  <elements targetIdentifier="simple.cps.host.SecondHostClass0.inst0"/>
+  <elements targetIdentifier="simple.cps.host.FirstHostClass0"/>
+  <features targetIdentifier="http://org.eclipse.viatra/model/cps#HostInstance.nodeIp"/>
+  <features targetIdentifier="http://org.eclipse.viatra/model/cps#ApplicationInstance.state"/>
+  <features targetIdentifier="http://org.eclipse.viatra/model/cps#ApplicationInstance.allocatedTo"/>
+  <features targetIdentifier="http://org.eclipse.viatra/model/cps#HostInstance.communicateWith"/>
+  <features targetIdentifier="http://org.eclipse.viatra/model/cps#HostInstance.applications"/>
+  <features targetIdentifier="http://org.eclipse.viatra/model/cps#HostType.instances"/>
+  <types targetIdentifier="http://org.eclipse.viatra/model/cps#HostInstance"/>
+</org.eclipse.emf.diffmerge.patch:EModelPatch>

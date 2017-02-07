@@ -22,6 +22,10 @@ public class ModelAccessProvider {
   public def EMFModelAccess getSelectedModelAccess(String pref, ResourceSet resourceSet){
     val accessType = ModelAccessTypes.valueOf(pref)
 
+    return accessType.getSelectedModelAccess(resourceSet)
+  }
+
+  public def EMFModelAccess getSelectedModelAccess(ModelAccessTypes accessType, ResourceSet resourceSet){
     var EMFModelAccess access
     switch (accessType) {
       case EMF_REFLECTIVE: {
@@ -33,7 +37,7 @@ public class ModelAccessProvider {
         val engine = ViatraQueryEngine.on(scope)
 
         val domain = AdapterFactoryEditingDomain.getEditingDomainFor(resourceSet)
-        if(domain != null){
+        if(domain !== null){
           val viatraModelManipulator = new ModelManipulationWithEditingDomain(engine, domain)
           access = new ViatraModelAccess(viatraModelManipulator, temporaryResource)
         }else{

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="EMF DiffMerge Model Patch" sequenceNumber="1485178630">
+<target name="EMF DiffMerge Model Patch" sequenceNumber="1487943191">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.200.v20150602-1417"/>
@@ -22,12 +22,16 @@
       <repository location="http://download.eclipse.org/diffmerge/updates/oxygen/official"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201701201731"/>
+      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201702171730"/>
       <repository location="http://download.eclipse.org/viatra/updates/integration"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.license.feature.group" version="1.0.1.v20140414-1359"/>
       <repository location="http://download.eclipse.org/cbi/updates/license/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.viatra.examples.cps.metamodel.feature.feature.group" version="0.1.0.201702231015"/>
+      <repository location="http://download.eclipse.org/viatra/examples/cps/"/>
     </location>
   </locations>
   <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>

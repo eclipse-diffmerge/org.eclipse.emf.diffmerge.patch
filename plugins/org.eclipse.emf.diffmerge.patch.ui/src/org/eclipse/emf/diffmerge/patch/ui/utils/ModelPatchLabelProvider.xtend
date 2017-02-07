@@ -44,16 +44,18 @@ class ModelPatchLabelProvider implements ILabelProvider {
 
   override removeListener(ILabelProviderListener listener) {}
 
-
   private dispatch def String getLabel(ModelPatch patch) {
     return '''ModelPatch [«patch.entries.size»]'''
   }
+
   private dispatch def String getLabel(ModelPatchEntry entry) {
     return entryLabelProvider.getLabel(entry)
   }
+
   private dispatch def String getLabel(IdentifiableWrapper wrapper) {
     return '''«wrapper.name»: «wrapper.ident»'''
   }
+
   private dispatch def String getLabel(Object object) {
     return object.toString
   }

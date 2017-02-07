@@ -40,6 +40,8 @@ import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameter
 
 import static org.junit.Assert.*
+import org.eclipse.emf.diffmerge.patch.runtime.modelaccess.ModelAccessProvider
+import org.eclipse.emf.diffmerge.patch.runtime.modelaccess.ModelAccessTypes
 
 @RunWith(Parameterized)
 class EMFModelAccessTest extends CPSModelPatchTest {
@@ -57,12 +59,7 @@ class EMFModelAccessTest extends CPSModelPatchTest {
       #[
         "ViatraSimpleModelManipulations",
         [ResourceSet resourceSet|
-          val temporaryResource = resourceSet.createResource(TEMPORARY_RESOURCE_URI)
-          val scope = new EMFScope(resourceSet)
-          val engine = ViatraQueryEngine.on(scope)
-
-          val viatraModelManipulator = new SimpleModelManipulations(engine)
-          val modelAccess = new ViatraModelAccess(viatraModelManipulator, temporaryResource)
+          val modelAccess = new ModelAccessProvider().getSelectedModelAccess(ModelAccessTypes.VIATRA, resourceSet)
           return modelAccess
         ]
       ],
@@ -83,7 +80,8 @@ class EMFModelAccessTest extends CPSModelPatchTest {
       #[
         "SimpleReflectiveEMFModelAccess",
         [ResourceSet resourceSet|
-          return new SimpleReflectiveEMFModelAccess
+          val modelAccess = new ModelAccessProvider().getSelectedModelAccess(ModelAccessTypes.EMF_REFLECTIVE, resourceSet)
+          return modelAccess
         ]
       ]
     )
@@ -104,7 +102,7 @@ class EMFModelAccessTest extends CPSModelPatchTest {
 
   @BeforeClass
   public static def void initCPS() {
-    Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(MODEL_FILE_EXTENSION, new XMIResourceFactoryImpl())
+    Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl())
     CyberPhysicalSystemPackage.eINSTANCE.eClass()
 
   }

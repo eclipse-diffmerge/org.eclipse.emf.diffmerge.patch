@@ -31,8 +31,9 @@ public class EMFIdentifierProvider {
 
   public String identifyEObject(EObject eObject) {
     String identifier = null;
-    if(eObjectIdentifierProvider != null){
-      identifier = eObjectIdentifierProvider.identify(eObject);
+    EObjectIdentifierProvider provider = getEObjectIdentifierProvider();
+    if(provider != null){
+      identifier = provider.identify(eObject);
     }
     return identifier;
   }

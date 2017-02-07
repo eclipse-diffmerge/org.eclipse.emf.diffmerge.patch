@@ -13,15 +13,16 @@ package org.eclipse.emf.diffmerge.patch.ui.utils;
 import org.eclipse.emf.diffmerge.patch.api.Identifiable;
 
 public enum IdentifiableWrapperFactory {
-    INSTANCE;
+  INSTANCE;
 
-    public IdentifiableWrapper create(Identifiable ident, String name) {
-        return create(ident.getIdentifier(), name);
-    }
-    public IdentifiableWrapper create(String ident, String name) {
-        IdentifiableWrapper wrapper = new IdentifiableWrapper();
-        wrapper.name = name;
-        wrapper.ident = ident;
-        return wrapper;
-    }
+  public IdentifiableWrapper create(Identifiable ident, String name) {
+    return create(ident.getIdentifier(), name);
+  }
+
+  public IdentifiableWrapper create(String ident, String name) {
+    IdentifiableWrapper wrapper = new IdentifiableWrapper();
+    wrapper.name = name;
+    wrapper.ident = ident;
+    return wrapper;
+  }
 }

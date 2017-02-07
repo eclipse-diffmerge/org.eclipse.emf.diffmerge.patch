@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="project">
-    
+
     <target name="getMajorMinorVersion">
         <script language="javascript">
             <![CDATA[
@@ -56,11 +56,11 @@
             composite.repository.name="${site.composite.name}"
             composite.repository.child="${child.repository}"
         />
-        
+
     </target>
-    
+
     <!-- = = = = = = = = = = = = = = = = =
-          macrodef: add.composite.repository.internal          
+          macrodef: add.composite.repository.internal
          = = = = = = = = = = = = = = = = = -->
     <macrodef name="add.composite.repository.internal">
         <attribute name="composite.repository.location" />
@@ -76,7 +76,7 @@
             <p2.composite.repository>
                 <repository
                     compressed="false"
-                    location="@{composite.repository.location}" 
+                    location="@{composite.repository.location}"
                     name="@{composite.repository.name}" />
                 <add>
                     <repository location="@{composite.repository.child}" />
@@ -87,7 +87,7 @@
 metadata.repository.factory.order=compositeContent.xml,\!
 artifact.repository.factory.order=compositeArtifacts.xml,\!
 </echo>
-            
+
         </sequential>
     </macrodef>
 

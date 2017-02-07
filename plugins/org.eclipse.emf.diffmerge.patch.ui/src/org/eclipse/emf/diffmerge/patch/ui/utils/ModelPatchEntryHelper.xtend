@@ -22,6 +22,7 @@ class ModelPatchEntryHelper {
      * ID: «entry.context.identifier»
      * Type: «entry.type.identifier»
   '''
+
   dispatch def String stringRepresentation(AttributeEntry entry) '''
     AttributeEntry
      * Direction: «entry.direction.name»
@@ -29,6 +30,7 @@ class ModelPatchEntryHelper {
      * Attribute: «entry.feature.identifier»
      * Value: «entry.value»
   '''
+
   dispatch def String stringRepresentation(ReferenceEntry entry) '''
     ReferenceEntry
      * Direction: «entry.direction.name»
@@ -36,6 +38,7 @@ class ModelPatchEntryHelper {
      * Reference: «entry.feature.identifier»
      * Target: «entry.target.identifier»
   '''
+
   dispatch def String stringRepresentation(ModelPatchEntry entry) {
     return entry.toString
   }

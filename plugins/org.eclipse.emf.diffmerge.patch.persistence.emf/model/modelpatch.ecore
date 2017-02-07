@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emodelpatch" nsURI="http://www.eclipse.org/emf/diffmerge/1.0.0/patch"
+    nsPrefix="org.eclipse.emf.diffmerge.patch">
+  <eClassifiers xsi:type="ecore:EClass" name="EModelPatch" eSuperTypes="#//EModelPatchElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+        eType="#//EModelPatchEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" eType="#//EModelPatchMetadata"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//EIdentifiable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//EIdentifiable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//EIdentifiable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EModelPatchMetadata" eSuperTypes="#//EModelPatchElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdAt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EModelPatchEntry" abstract="true" eSuperTypes="#//EModelPatchElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//EChangeDirection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//EIdentifiable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EChangeDirection">
+    <eLiterals name="ADD"/>
+    <eLiterals name="REMOVE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EIdentifiable" eSuperTypes="#//EModelPatchElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetIdentifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EElementEntry" eSuperTypes="#//EModelPatchEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//EIdentifiable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EModelPatchEMFMetadata" eSuperTypes="#//EModelPatchMetadata">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelUris" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usedNamespaceUris" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EStructuralFeatureEntry" abstract="true"
+      eSuperTypes="#//EModelPatchEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//EIdentifiable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EReferenceEntry" eSuperTypes="#//EStructuralFeatureEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//EIdentifiable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EAttributeEntry" eSuperTypes="#//EStructuralFeatureEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EModelPatchElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementIdentifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+</ecore:EPackage>

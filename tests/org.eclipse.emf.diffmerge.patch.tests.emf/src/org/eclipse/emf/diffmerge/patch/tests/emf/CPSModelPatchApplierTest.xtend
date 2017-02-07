@@ -139,6 +139,12 @@ class CPSModelPatchApplierTest extends CPSModelPatchTest{
 
     // Assert
     assertTrue(patchApplication.diagnostics.numOfExceptions > 0);
+    val diags = patchApplication.diagnostics.diagnosticElements
+    assertTrue(diags.size > 0)
+    val diag = diags.head
+    assertNotNull(diag.caughtException)
+    assertNotNull(diag.message)
+    assertNotNull(diag.problematicEntry)
   }
 
   @Test

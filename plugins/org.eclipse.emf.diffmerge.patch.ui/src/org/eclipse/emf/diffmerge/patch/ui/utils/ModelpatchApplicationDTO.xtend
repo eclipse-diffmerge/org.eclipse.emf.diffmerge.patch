@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.emf.diffmerge.patch.ui.utils
 
+import com.google.common.io.Files
 import java.io.File
 import org.apache.log4j.Logger
 import org.eclipse.core.runtime.IProgressMonitor
@@ -69,19 +70,20 @@ class ModelpatchApplicationDTO {
   Command lastCommand
   EditingDomain editingDomain
 
-
-
   new(Resource originalModel) {
     checkNotNull(originalModel, "Model cannot be null.")
-    this.originalModel=originalModel
+    this.originalModel = originalModel
   }
 
   def boolean loadPatch(String patchPath) {
-    if(!patchPath.isNullOrEmpty) {
+    if (!patchPath.isNullOrEmpty) {
       try {
-        originalModelPatch = serializationType.selectedSerializer.load(new File(patchPath))
+        val file = new File(patchPath)
+        val serializerByFileExtension = serializerProvider.getSerializerByFileExtension(Files.getFileExtension(patchPath))
+        val serializer = serializerByFileExtension ?: serializationType.selectedSerializer
+        originalModelPatch = (serializer).load(file)
         modifiedModelPatch = originalModelPatch
-      } catch(Exception ex) {
+      } catch (Exception ex) {
         originalModelPatch = null
         this.patchPath = patchPath
         throw ex
@@ -95,14 +97,14 @@ class ModelpatchApplicationDTO {
   }
 
   def ModelPatch modifyPatch(boolean isReverse, IModelPatchEntryFilter... filters) {
-    if(isReverse) {
+    if (isReverse) {
       modifiedModelPatch = ModelPatchReverser.INSTANCE.reverse(originalModelPatch)
     } else {
       modifiedModelPatch = originalModelPatch
     }
-    if(filters != null) {
-      for(filter : filters) {
-        if(filter!=null) modifiedModelPatch = modifiedModelPatch.applyFilter(filter)
+    if (filters !== null) {
+      for (filter : filters) {
+        if(filter !== null) modifiedModelPatch = modifiedModelPatch.applyFilter(filter)
       }
     }
     return modifiedModelPatch
@@ -169,18 +171,16 @@ class ModelpatchApplicationDTO {
   }
 
   def void undoEDMModifications() {
-    if(lastCommand==null) {
-      while(lastCommand!=editingDomain.commandStack.undoCommand && editingDomain.commandStack.canUndo) {
+    if (lastCommand === null) {
+      while (lastCommand != editingDomain.commandStack.undoCommand && editingDomain.commandStack.canUndo) {
         editingDomain.commandStack.undo
       }
     } else {
-      while(editingDomain.commandStack.canUndo) {
+      while (editingDomain.commandStack.canUndo) {
         editingDomain.commandStack.undo
       }
     }
   }
-
-
 
   private def PatchApplication applyPatch(Resource resource) {
 
@@ -192,7 +192,8 @@ class ModelpatchApplicationDTO {
     val EMFModelAccess access = modelAccessType.getSelectedModelAccess(resourceSet)
 
     val patchApplier = new EMFModelPatchApplier(access)
-    val navigationHelper = ViatraBaseFactory.getInstance().createNavigationHelper(resourceSet,new BaseIndexOptions(false, IndexingLevel.FULL), Logger.getLogger(class));
+    val navigationHelper = ViatraBaseFactory.getInstance().createNavigationHelper(resourceSet,
+      new BaseIndexOptions(false, IndexingLevel.FULL), Logger.getLogger(class));
     patchApplier.locator.EObjectLocator = new BaseIndexEObjectLocator(navigationHelper)
     patchApplier
   }
@@ -205,7 +206,7 @@ class ModelpatchApplicationDTO {
 
   private def Resource copyTo(Resource copiable, Resource target) {
     val copier = new EcoreUtil.Copier
-    if(target.contents!=null && target.contents.size>0) {
+    if (target.contents !== null && target.contents.size > 0) {
       target.contents.clear
     }
     target.contents.addAll(copier.copyAll(copiable.contents))

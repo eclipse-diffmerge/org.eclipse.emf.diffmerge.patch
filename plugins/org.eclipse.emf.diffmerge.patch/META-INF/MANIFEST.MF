@@ -10,5 +10,6 @@ Require-Bundle: com.google.guava;bundle-version="15.0.0",
 Export-Package: org.eclipse.emf.diffmerge.patch,
  org.eclipse.emf.diffmerge.patch.api,
  org.eclipse.emf.diffmerge.patch.api.filters,
+ org.eclipse.emf.diffmerge.patch.persistence,
  org.eclipse.emf.diffmerge.patch.serializer
 Bundle-ClassPath: .

@@ -21,7 +21,7 @@ class ModelPatchEntryFilterContentProvider implements IStructuredContentProvider
   override void inputChanged(Viewer viewer, Object oldInput, Object newInput) {}
 
   override Object[] getElements(Object inputElement) {
-    if(inputElement==null) {
+    if (inputElement == null) {
       return newArrayList
     }
     return inputElement.allElements
@@ -30,6 +30,7 @@ class ModelPatchEntryFilterContentProvider implements IStructuredContentProvider
   private dispatch def List<? extends Object> getAllElements(Object object) {
     return newArrayList
   }
+
   private dispatch def List<? extends Object> getAllElements(List list) {
     return list
   }

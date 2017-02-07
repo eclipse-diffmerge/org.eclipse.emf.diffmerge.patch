@@ -16,7 +16,8 @@ import org.junit.runners.Suite.SuiteClasses
 
 @SuiteClasses(#[
   BasicReverseModelPatchTests,
-  ComplexReverseModelPatchTest
+  ComplexReverseModelPatchTest,
+  ModelPatchFilterTest
 ])
 @RunWith(Suite)
 class ModelPatchTestSuite {}

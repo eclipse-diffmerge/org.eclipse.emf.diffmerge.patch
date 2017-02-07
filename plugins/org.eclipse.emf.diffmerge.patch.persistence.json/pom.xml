@@ -10,18 +10,18 @@
         Abel Hegedus, Tamas Borbas, Peter Lunk, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
  -->
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<artifactId>org.eclipse.emf.diffmerge.patch.plugins</artifactId>
-		<groupId>org.eclipse.emf.diffmerge.patch</groupId>
-		<version>0.1.0-SNAPSHOT</version>
-	</parent>
-	<artifactId>org.eclipse.emf.diffmerge.patch.persistence.json</artifactId>
-	<packaging>eclipse-plugin</packaging>
-	<version>0.1.0-SNAPSHOT</version>
-	<properties>
-		<rootPath>${basedir}/../</rootPath>
-	</properties>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>org.eclipse.emf.diffmerge.patch.plugins</artifactId>
+    <groupId>org.eclipse.emf.diffmerge.patch</groupId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>org.eclipse.emf.diffmerge.patch.persistence.json</artifactId>
+  <packaging>eclipse-plugin</packaging>
+  <version>0.1.0-SNAPSHOT</version>
+  <properties>
+    <rootPath>${basedir}/../</rootPath>
+  </properties>
 </project>

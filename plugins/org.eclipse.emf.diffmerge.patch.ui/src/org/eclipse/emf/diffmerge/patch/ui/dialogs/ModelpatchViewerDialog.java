@@ -30,101 +30,104 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 public class ModelpatchViewerDialog extends Dialog {
-    private ModelPatch patch;
-    private String path;
-    private TreeViewer tvParsedPatch;
+  private ModelPatch patch;
+  private String path;
+  private TreeViewer tvParsedPatch;
 
-    /**
-     * Create the dialog.
-     * @param parentShell
-     */
-    public ModelpatchViewerDialog(Shell parentShell, ModelPatch patch, String path) {
-        super(parentShell);
-        setShellStyle(SWT.RESIZE | SWT.TITLE | SWT.APPLICATION_MODAL);
-        this.patch = patch;
-        this.path = path;
+  /**
+   * Create the dialog.
+   * 
+   * @param parentShell
+   */
+  public ModelpatchViewerDialog(Shell parentShell, ModelPatch patch, String path) {
+    super(parentShell);
+    setShellStyle(SWT.RESIZE | SWT.TITLE | SWT.APPLICATION_MODAL);
+    this.patch = patch;
+    this.path = path;
+  }
+
+  private String title;
+  private Text txtPath;
+
+  public void setTitle(String title) {
+    this.title = title;
+    if (getShell() == null) {
+      configureShell(createShell());
+    } else {
+      getShell().setText(title);
     }
+  }
 
-    private String title;
-    private Text txtPath;
+  @Override
+  protected void configureShell(Shell shell) {
+    super.configureShell(shell);
+    shell.setText(title);
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-        if(getShell()==null) {
-            configureShell(createShell());
-        } else {
-            getShell().setText(title);
-        }
-    }
+  /**
+   * Create contents of the dialog.
+   * 
+   * @param parent
+   */
+  @Override
+  protected Control createDialogArea(Composite parent) {
+    getShell().setMinimumSize(getInitialSize());
+    Composite container = (Composite) super.createDialogArea(parent);
 
-    @Override
-    protected void configureShell(Shell shell) {
-        super.configureShell(shell);
-        shell.setText(title);
-    }
+    Composite composite = new Composite(container, SWT.NONE);
+    composite.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+    GridLayout gl_composite = new GridLayout(2, false);
+    gl_composite.marginHeight = 0;
+    gl_composite.marginWidth = 0;
+    composite.setLayout(gl_composite);
 
-    /**
-     * Create contents of the dialog.
-     * @param parent
-     */
-    @Override
-    protected Control createDialogArea(Composite parent) {
-        getShell().setMinimumSize(getInitialSize());
-        Composite container = (Composite) super.createDialogArea(parent);
+    Label lblPath = new Label(composite, SWT.WRAP);
+    lblPath.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+    lblPath.setSize(92, 15);
+    lblPath.setText("Path: ");
 
-        Composite composite = new Composite(container, SWT.NONE);
-        composite.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-        GridLayout gl_composite = new GridLayout(2, false);
-        gl_composite.marginHeight = 0;
-        gl_composite.marginWidth = 0;
-        composite.setLayout(gl_composite);
+    txtPath = new Text(composite, SWT.BORDER);
+    txtPath.setEditable(false);
+    txtPath.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+    txtPath.setText(path);
 
-        Label lblPath = new Label(composite, SWT.WRAP);
-        lblPath.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-        lblPath.setSize(92, 15);
-        lblPath.setText("Path: ");
+    Label lblEntries = new Label(container, SWT.NONE);
+    lblEntries.setFont(SWTResourceManager.getFont("Segoe UI", 14, SWT.BOLD));
+    lblEntries.setText("Entries:");
 
-        txtPath = new Text(composite, SWT.BORDER);
-        txtPath.setEditable(false);
-        txtPath.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-        txtPath.setText(path);
+    tvParsedPatch = new TreeViewer(container, SWT.BORDER);
+    Tree treeParsedPatch = tvParsedPatch.getTree();
+    treeParsedPatch.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+    treeParsedPatch.setVisible(true);
+    tvParsedPatch.setContentProvider(new ModelPatchContentProvider());
+    tvParsedPatch.setLabelProvider(new ModelPatchLabelProvider(new DescriptiveEntryLabelProvider()));
+    tvParsedPatch.setInput(patch);
 
-        Label lblEntries = new Label(container, SWT.NONE);
-        lblEntries.setFont(SWTResourceManager.getFont("Segoe UI", 14, SWT.BOLD));
-        lblEntries.setText("Entries:");
+    return container;
+  }
 
-        tvParsedPatch = new TreeViewer(container, SWT.BORDER);
-        Tree treeParsedPatch = tvParsedPatch.getTree();
-        treeParsedPatch.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-        treeParsedPatch.setVisible(true);
-        tvParsedPatch.setContentProvider(new ModelPatchContentProvider());
-        tvParsedPatch.setLabelProvider(new ModelPatchLabelProvider(new DescriptiveEntryLabelProvider()));
-        tvParsedPatch.setInput(patch);
+  /**
+   * Create contents of the button bar.
+   * 
+   * @param parent
+   */
+  @Override
+  protected void createButtonsForButtonBar(Composite parent) {
+    createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, true);
+  }
 
-        return container;
-    }
+  /**
+   * Return the initial size of the dialog.
+   */
+  @Override
+  protected Point getInitialSize() {
+    return new Point(450, 300);
+  }
 
-    /**
-     * Create contents of the button bar.
-     * @param parent
-     */
-    @Override
-    protected void createButtonsForButtonBar(Composite parent) {
-        createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, true);
-    }
-
-    /**
-     * Return the initial size of the dialog.
-     */
-    @Override
-    protected Point getInitialSize() {
-        return new Point(450, 300);
-    }
-
-    @Override
-    public boolean close() {
-        SWTResourceManager.dispose();
-        return super.close();
-    }
+  @Override
+  public boolean close() {
+    SWTResourceManager.dispose();
+    return super.close();
+  }
 
 }

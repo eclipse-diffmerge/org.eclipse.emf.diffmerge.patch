@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.tests.emf;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: %providerName
-Export-Package: org.eclipse.emf.diffmerge.patch.tests.emf
+Export-Package: org.eclipse.emf.diffmerge.patch.tests.emf,
+ org.eclipse.emf.diffmerge.patch.tests.emf.identifier
 Require-Bundle: com.google.guava;bundle-version="15.0.0",
  org.eclipse.emf.ecore;bundle-version="2.10.2",
  org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",

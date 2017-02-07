@@ -24,7 +24,7 @@
          point="org.eclipse.ui.editors">
       <editor
             class="org.eclipse.emf.diffmerge.patch.ui.editors.ModelPatchEditorPart"
-            extensions="modelpatch"
+            extensions="modelpatch, emodelpatch"
             id="org.eclipse.emf.diffmerge.patch.ui.editors.ModelPatchEditorPart"
             name="ModelPatch Editor">
       </editor>

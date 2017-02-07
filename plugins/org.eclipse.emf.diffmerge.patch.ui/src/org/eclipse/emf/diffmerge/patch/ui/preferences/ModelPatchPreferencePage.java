@@ -15,8 +15,8 @@ import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.emf.diffmerge.patch.runtime.modelaccess.ModelAccessTypes;
-import org.eclipse.emf.diffmerge.patch.ui.Activator;
-import org.eclipse.emf.diffmerge.patch.ui.utils.SerializationTypes;
+import org.eclipse.emf.diffmerge.patch.ui.ModelPatchUIPlugin;
+import org.eclipse.emf.diffmerge.patch.ui.utils.PersistenceTypes;
 
 public class ModelPatchPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
@@ -32,16 +32,15 @@ public class ModelPatchPreferencePage extends FieldEditorPreferencePage implemen
             { "Editing Domain Aware Model Access", ModelAccessTypes.VIATRA.toString() } },
         getFieldEditorParent()));
 
-    addField(new RadioGroupFieldEditor(ModelPatchPreferenceProvider.SERIALIZER_PREFERENCE_ID, "Serialization:", 1,
-        new String[][] { { "Jackson - JSON", SerializationTypes.JACKSON.toString() },
-            { "GSON - JSON", SerializationTypes.GSON.toString() },
-            { "Jackson - BSON", SerializationTypes.BSON.toString() } },
+    addField(new RadioGroupFieldEditor(
+        ModelPatchPreferenceProvider.SERIALIZER_PREFERENCE_ID, "Serialization:", 1, new String[][] {
+            { "GSON - JSON", PersistenceTypes.GSON.toString() }, { "EMF - XMI", PersistenceTypes.EMF.toString() } },
         getFieldEditorParent()));
   }
 
   @Override
   public void init(IWorkbench workbench) {
-    setPreferenceStore(Activator.getDefault().getPreferenceStore());
+    setPreferenceStore(ModelPatchUIPlugin.getDefault().getPreferenceStore());
   }
 
 }

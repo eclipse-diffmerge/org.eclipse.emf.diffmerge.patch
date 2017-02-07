@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.persistence.emf;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.eclipse.emf.diffmerge.patch.persistence.emf,
+ org.eclipse.emf.diffmerge.patch.persistence.emf.emodelpatch,
+ org.eclipse.emf.diffmerge.patch.persistence.emf.emodelpatch.impl,
+ org.eclipse.emf.diffmerge.patch.persistence.emf.emodelpatch.util
+Require-Bundle: org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",
+ com.google.guava;bundle-version="15.0.0",
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;bundle-version="2.9.0";visibility:=reexport,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.emf.diffmerge.patch.runtime;bundle-version="[0.1.0,0.2.0)",
+ org.eclipse.viatra.query.runtime;bundle-version="[1.4.0,2.0.0)"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Import-Package: org.apache.log4j;version="1.2.15"
+

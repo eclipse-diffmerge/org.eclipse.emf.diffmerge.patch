@@ -27,9 +27,14 @@ class ModelPatchEntryFilterLabelProvider implements ILabelProvider {
   private dispatch def String getLabel(Object object) {
     return object.toString
   }
+
   private dispatch def String getLabel(ComplexEntryFilter filter) '''«filter.type.name»'''
-  private dispatch def String getLabel(EntryDirectionFilter filter) '''Filtered direction: «filter.filteredDirection.name»'''
-  private dispatch def String getLabel(EntryTypeFilter filter) '''Filtered entry types: «FOR type : filter.filteredTypes SEPARATOR ", "»«type.name»«ENDFOR»'''
+
+  private dispatch def String getLabel(
+    EntryDirectionFilter filter) '''Filtered direction: «filter.filteredDirection.name»'''
+
+  private dispatch def String getLabel(
+    EntryTypeFilter filter) '''Filtered entry types: «FOR type : filter.filteredTypes SEPARATOR ", "»«type.name»«ENDFOR»'''
 
   override addListener(ILabelProviderListener listener) {}
 

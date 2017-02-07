@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.eclipse.emf.diffmerge.patch.ui.utils;
 
-public enum SerializationTypes {
-  JACKSON,
-  GSON,
-  BSON
+public enum PersistenceTypes {
+  GSON, EMF
 }

@@ -13,6 +13,7 @@ package org.eclipse.emf.diffmerge.patch.tests.emf
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 import org.junit.runners.Suite.SuiteClasses
+import org.eclipse.emf.diffmerge.patch.tests.emf.identifier.IdentifierTestSuite
 
 @SuiteClasses(#[
   EMFModelPatchMetadataTest,
@@ -22,7 +23,8 @@ import org.junit.runners.Suite.SuiteClasses
   EMFModelAccessTest,
   ModelPatchRecorderTest,
   ModelPatchApplierSmokeTests,
-  ModelPatchExporterTest
+  ModelPatchExporterTest,
+  IdentifierTestSuite
 ])
 @RunWith(Suite)
 class ModelPatchEmfTestSuite {

@@ -107,10 +107,10 @@ class ModelPatchPerformanceTests {
       println("Patch created")
       //********** Serialize Patch **********
 
-      var IModelPatchSerializer serializer=GsonModelPatchSerializer.create(this.class.classLoader)
+      var IModelPatchSerializer serializer = GsonModelPatchSerializer.create(this.class.classLoader)
       watch.reset.start
 
-      val serializedPatch = serializer.serializeStream(modelPatch)
+      val serializedPatch = serializer.serialize(modelPatch)
       results.add(watch.elapsed(TimeUnit.MICROSECONDS))
 
       println("Patch serialized")
@@ -168,8 +168,8 @@ class ModelPatchPerformanceTests {
       val modelPatchRecorder = new ModelPatchRecorder
       val modelPatch = modelPatchRecorder.generateModelPatch(comparison)
       //********** Serialize Patch **********
-      var IModelPatchSerializer serializer=GsonModelPatchSerializer.create(this.class.classLoader)
-      val patchOutput = serializer.serializeStream(modelPatch)
+      var IModelPatchSerializer serializer = GsonModelPatchSerializer.create(this.class.classLoader)
+      val patchOutput = serializer.serialize(modelPatch)
       //********** Deserialize Patch **********
       val readPatch = serializer.load(patchOutput)
       //********** Apply Patch **********

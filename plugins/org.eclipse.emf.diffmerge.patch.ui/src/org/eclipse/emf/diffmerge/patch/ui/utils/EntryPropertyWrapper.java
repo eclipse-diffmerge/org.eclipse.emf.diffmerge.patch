@@ -15,19 +15,21 @@ import org.eclipse.emf.diffmerge.patch.api.Identifiable;
 import com.google.common.base.Optional;
 
 public class EntryPropertyWrapper {
-    public String prop = "";
-    public String value = "";
+  public String prop = "";
+  public String value = "";
 
-    public EntryPropertyWrapper(String prop, String value) {
-        this.prop = prop;
-        this.value = value;
-    }
-    public EntryPropertyWrapper(String prop, Identifiable value) {
-        this.prop = prop;
-        this.value = value.getIdentifier();
-    }
-    public EntryPropertyWrapper(String prop, Optional<? extends Object> value) {
-        this.prop = prop;
-        this.value = value.isPresent()?value.get().toString():"No value";
-    }
+  public EntryPropertyWrapper(String prop, String value) {
+    this.prop = prop;
+    this.value = value;
+  }
+
+  public EntryPropertyWrapper(String prop, Identifiable value) {
+    this.prop = prop;
+    this.value = value.getIdentifier();
+  }
+
+  public EntryPropertyWrapper(String prop, Optional<? extends Object> value) {
+    this.prop = prop;
+    this.value = value.isPresent() ? value.get().toString() : "No value";
+  }
 }

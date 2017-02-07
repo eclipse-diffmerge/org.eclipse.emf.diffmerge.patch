@@ -11,6 +11,6 @@
 package org.eclipse.emf.diffmerge.patch.ui.utils;
 
 public class IdentifiableWrapper {
-    public String name;
-    public String ident;
+  public String name;
+  public String ident;
 }

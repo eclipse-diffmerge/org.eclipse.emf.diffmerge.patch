@@ -31,7 +31,7 @@ class ModelpatchApplicationHandler extends AbstractHandler {
     try {
       shell = HandlerUtil.getActiveShell(event)
       (HandlerUtil.getCurrentSelection(event) as IStructuredSelection).executePatch
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       val factory = new DialogFactory(shell)
       factory.openErrorDialog("Modelpatch Application Problem", "Patch cannot be applied!", ex, ID)
       ex.printStackTrace
@@ -39,13 +39,14 @@ class ModelpatchApplicationHandler extends AbstractHandler {
     return null
   }
 
-
   private dispatch def void executePatch(IStructuredSelection strucSelection) {
     strucSelection.firstElement.executePatch
   }
+
   private dispatch def void executePatch(EObject eobj) {
     eobj.eResource.executePatch
   }
+
   private dispatch def void executePatch(Resource resource) {
     // Show ModelpatchApplicationWizard for patch file and filters
     val wizard = new WizardDialog(shell, new ModelpatchApplicationWizard(resource))

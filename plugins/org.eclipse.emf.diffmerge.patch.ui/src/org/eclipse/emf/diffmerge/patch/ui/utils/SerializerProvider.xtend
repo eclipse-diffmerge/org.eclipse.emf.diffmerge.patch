@@ -10,22 +10,39 @@
  *******************************************************************************/
 package org.eclipse.emf.diffmerge.patch.ui.utils
 
+import org.eclipse.emf.diffmerge.patch.persistence.emf.EMFModelPatchSerializer
+import org.eclipse.emf.diffmerge.patch.serializer.IModelPatchSerializer
 import org.eclipse.emf.diffmerge.patch.serializer.gson.GsonModelPatchSerializer
 
 class SerializerProvider {
-  public def org.eclipse.emf.diffmerge.patch.serializer.IModelPatchSerializer getSelectedSerializer(String preference){
-    val accessType = SerializationTypes.valueOf(preference)
+  def IModelPatchSerializer getSelectedSerializer(String typeName) {
+    val accessType = PersistenceTypes.valueOf(typeName)
 
-    var org.eclipse.emf.diffmerge.patch.serializer.IModelPatchSerializer serializer
-    switch (accessType) {
+    return accessType.selectedSerializer
+  }
+
+  def IModelPatchSerializer getSelectedSerializer(PersistenceTypes type) {
+    var IModelPatchSerializer serializer
+    switch (type) {
       case GSON: {
         serializer = GsonModelPatchSerializer.create(this.class.classLoader)
-
       }
-
+      case EMF: {
+        serializer = new EMFModelPatchSerializer
+      }
       default: {
         serializer = GsonModelPatchSerializer.create(this.class.classLoader)
       }
     }
+    return serializer
+  }
+
+  def IModelPatchSerializer getSerializerByFileExtension(String fileExtension) {
+    val serializer = PersistenceTypes.values.map [
+      it.selectedSerializer
+    ].findFirst [
+      preferredFileExtension == fileExtension
+    ]
+    return serializer
   }
 }

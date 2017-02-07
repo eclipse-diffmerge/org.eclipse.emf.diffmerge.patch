@@ -12,22 +12,22 @@ package org.eclipse.emf.diffmerge.patch.ui.preferences;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.diffmerge.patch.runtime.modelaccess.ModelAccessTypes;
-import org.eclipse.emf.diffmerge.patch.ui.utils.SerializationTypes;
+import org.eclipse.emf.diffmerge.patch.ui.ModelPatchUIPlugin;
+import org.eclipse.emf.diffmerge.patch.ui.utils.PersistenceTypes;
 
 public enum ModelPatchPreferenceProvider {
   INSTANCE;
 
-  public static String PREFERENCES_ID = "org.eclipse.emf.diffmerge.patch.gui";
-  public static String SERIALIZER_PREFERENCE_ID = "ModelPatch.Serializer";
-  public static String MODELACCESS_PREFERENCE_ID = "ModelPatch.ModelAccess";
+  public static final String SERIALIZER_PREFERENCE_ID = "ModelPatch.Serializer";
+  public static final String MODELACCESS_PREFERENCE_ID = "ModelPatch.ModelAccess";
 
   public String getSerializationType() {
-    return Platform.getPreferencesService().getString(PREFERENCES_ID,
-        SERIALIZER_PREFERENCE_ID, SerializationTypes.JACKSON.toString(), null);
+    return Platform.getPreferencesService().getString(ModelPatchUIPlugin.PLUGIN_ID, SERIALIZER_PREFERENCE_ID,
+        PersistenceTypes.GSON.toString(), null);
   }
 
   public String getModelAccessType() {
-    return Platform.getPreferencesService().getString(PREFERENCES_ID, MODELACCESS_PREFERENCE_ID,
+    return Platform.getPreferencesService().getString(ModelPatchUIPlugin.PLUGIN_ID, MODELACCESS_PREFERENCE_ID,
         ModelAccessTypes.EMF_REFLECTIVE.toString(), null);
   }
 }

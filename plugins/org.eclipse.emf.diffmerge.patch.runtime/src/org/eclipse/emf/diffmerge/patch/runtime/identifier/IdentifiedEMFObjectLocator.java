@@ -43,8 +43,9 @@ public class IdentifiedEMFObjectLocator {
   public Optional<EObject> locateEObject(String identifier) {
     checkNotNullIdentifier(identifier);
     Optional<EObject> locate = Optional.absent();
-    if(eObjectLocator != null) {
-      locate = eObjectLocator.locate(identifier);
+    EObjectLocator locator = getEObjectLocator();
+    if(locator != null) {
+      locate = locator.locate(identifier);
     }
     return locate;
   }

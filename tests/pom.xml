@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<artifactId>org.eclipse.emf.diffmerge.patch.parent</artifactId>
-		<groupId>org.eclipse.emf.diffmerge.patch</groupId>
-		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../releng/org.eclipse.emf.diffmerge.patch.parent</relativePath>
-	</parent>
-	<groupId>org.eclipse.emf.diffmerge.patch</groupId>
-	<artifactId>org.eclipse.emf.diffmerge.patch.tests.parent</artifactId>
-	<name>Model Patcher Tests</name>
-	<version>0.1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <parent>
+    <artifactId>org.eclipse.emf.diffmerge.patch.parent</artifactId>
+    <groupId>org.eclipse.emf.diffmerge.patch</groupId>
+    <version>0.1.0-SNAPSHOT</version>
+    <relativePath>../releng/org.eclipse.emf.diffmerge.patch.parent</relativePath>
+  </parent>
+  <groupId>org.eclipse.emf.diffmerge.patch</groupId>
+  <artifactId>org.eclipse.emf.diffmerge.patch.tests.parent</artifactId>
+  <name>Model Patcher Tests</name>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<modules>
-		<module>org.eclipse.emf.diffmerge.patch.tests</module>
-		<module>org.eclipse.emf.diffmerge.patch.tests.emf</module>
-		<module>org.eclipse.emf.diffmerge.patch.tests.persistence.json</module>
-	</modules>
+  <modules>
+    <module>org.eclipse.emf.diffmerge.patch.tests</module>
+    <module>org.eclipse.emf.diffmerge.patch.tests.emf</module>
+    <module>org.eclipse.emf.diffmerge.patch.tests.persistence.json</module>
+    <module>org.eclipse.emf.diffmerge.patch.tests.persistence.emf</module>
+  </modules>
 
-	<profiles>
-		<profile>
-			<id>gui.test</id>
-			<modules>
-				<!-- GUI tests -->
-				<module>org.eclipse.emf.diffmerge.patch.tests.ui</module>
-			</modules>
-		</profile>
-	</profiles>
+  <profiles>
+    <profile>
+      <id>gui.test</id>
+      <modules>
+        <!-- GUI tests -->
+        <module>org.eclipse.emf.diffmerge.patch.tests.ui</module>
+      </modules>
+    </profile>
+  </profiles>
 
 </project>

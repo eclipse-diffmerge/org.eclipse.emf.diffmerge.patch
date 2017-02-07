@@ -45,21 +45,21 @@ class ModelpatchApplicationWizard extends Wizard {
   }
 
   override canFinish() {
-    return container.currentPage==resultPage || (container.currentPage==edmPage && edmPage.canFinish)
+    return container.currentPage == resultPage || (container.currentPage == edmPage && edmPage.canFinish)
   }
 
   override boolean performFinish() {
-    if(container.currentPage == resultPage) {
+    if (container.currentPage == resultPage) {
       dto.saveModel
       return true
-    } else if(container.currentPage == edmPage) {
+    } else if (container.currentPage == edmPage) {
       return true
     }
     return false
   }
 
   override performCancel() {
-    if(container.currentPage == edmPage) {
+    if (container.currentPage == edmPage) {
       dto.undoEDMModifications
     }
     super.performCancel()
@@ -67,7 +67,7 @@ class ModelpatchApplicationWizard extends Wizard {
 
   override IWizardPage getNextPage(IWizardPage currentPage) {
     try {
-      switch(currentPage) {
+      switch (currentPage) {
         case patchLoadingPage: {
           dto.loadPatch(patchLoadingPage.getSelectedFilePath())
           return patchModificationPage

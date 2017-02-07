@@ -38,7 +38,7 @@ class ModelPatchFilterApplier {
    */
   def ModelPatch applyUnfilter(ModelPatch originalPatch, IModelPatchEntryFilter filter) {
     val builder = ModelPatchBuilder.create
-    builder.append(originalPatch.entries.filter[!filter.isEntryFiltered(it)].toList)
+    builder.append(originalPatch.entries.filter[filter.isEntryFiltered(it)].toList)
     return builder.build
   }
 

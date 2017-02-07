@@ -15,9 +15,9 @@ import java.util.List;
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchEntry;
 
 public interface IEntryLabelProvider {
-    public String shortDescription(ModelPatchEntry entry);
+  public String shortDescription(ModelPatchEntry entry);
 
-    public String getLabel(ModelPatchEntry entry);
+  public String getLabel(ModelPatchEntry entry);
 
-    public List<EntryPropertyWrapper> getPropertyList(ModelPatchEntry entry);
+  public List<EntryPropertyWrapper> getPropertyList(ModelPatchEntry entry);
 }

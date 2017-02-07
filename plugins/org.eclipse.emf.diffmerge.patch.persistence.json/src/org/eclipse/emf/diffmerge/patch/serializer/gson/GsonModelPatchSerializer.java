@@ -10,28 +10,23 @@
  *******************************************************************************/
 package org.eclipse.emf.diffmerge.patch.serializer.gson;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 
 import org.eclipse.emf.diffmerge.patch.api.ModelPatch;
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchEntry;
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchException;
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchMetadata;
+import org.eclipse.emf.diffmerge.patch.persistence.ModelPatchPersister;
 import org.eclipse.emf.diffmerge.patch.serializer.IModelPatchSerializer;
 import org.eclipse.emf.diffmerge.patch.serializer.gson.typeadapters.AbstractSubclassAdapter;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.CharStreams;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class GsonModelPatchSerializer implements IModelPatchSerializer{
+public class GsonModelPatchSerializer implements IModelPatchSerializer, ModelPatchPersister<String>{
 
   public static GsonModelPatchSerializer create(ClassLoader classLoader) {
     GsonModelPatchSerializer gsonModelPatchSerializer = new GsonModelPatchSerializer();
@@ -61,11 +56,6 @@ public class GsonModelPatchSerializer implements IModelPatchSerializer{
   }
 
   @Override
-  public InputStream serializeStream(ModelPatch modelPatch) throws ModelPatchException {
-    return new ByteArrayInputStream(createGson().toJson(modelPatch).getBytes(StandardCharsets.UTF_8));
-  }
-
-  @Override
   public ModelPatch load(File file) throws ModelPatchException {
     try {
       FileReader reader = new FileReader(file);
@@ -85,17 +75,6 @@ public class GsonModelPatchSerializer implements IModelPatchSerializer{
     return createGson().fromJson(jsonSource, ModelPatch.class);
   }
 
-  @Override
-  public ModelPatch load(InputStream jsonStream) throws ModelPatchException {
-    String content = "";
-    try {
-      content = CharStreams.toString(new InputStreamReader(jsonStream, Charsets.UTF_8));
-    } catch (IOException e) {
-      throw new ModelPatchException("GSON deserialization failed, check if source has the correct JSON syntax", e);
-    }
-    return createGson().fromJson(content, ModelPatch.class);
-  }
-
   private Gson createGson(){
     return new GsonBuilder()
         .registerTypeAdapter(ModelPatchEntry.class, new AbstractSubclassAdapter<ModelPatchEntry>(classLoader))
@@ -104,6 +83,14 @@ public class GsonModelPatchSerializer implements IModelPatchSerializer{
         .create();
   }
 
+  @Override
+  public String persist(ModelPatch modelPatch) throws ModelPatchException {
+    return serialize(modelPatch);
+  }
 
+  @Override
+  public String getPreferredFileExtension() {
+    return "modelpatch";
+  }
 
 }

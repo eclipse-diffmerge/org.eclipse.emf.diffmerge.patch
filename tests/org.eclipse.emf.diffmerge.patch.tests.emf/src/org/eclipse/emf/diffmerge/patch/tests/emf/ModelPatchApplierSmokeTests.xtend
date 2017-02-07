@@ -111,7 +111,7 @@ class ModelPatchApplierSmokeTests extends CPSModelPatchTest {
     val patchApplication = patchApplier.apply(reversePatch, resourceSet)
     val diags = patchApplication.diagnostics
 
-    // TODO Check the result
+    // Check the result
     assertEquals("Unexpected exceptions while applying reverse patch", 0, diags.numOfExceptions)
     val referenceSet = new ResourceSetImpl()
     val referenceResource = referenceSet.getResource(URI.createFileURI(originalModelPath), true)

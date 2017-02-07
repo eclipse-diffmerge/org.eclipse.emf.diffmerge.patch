@@ -23,7 +23,7 @@ class ModelPatchContentProvider implements ITreeContentProvider {
   override void inputChanged(Viewer viewer, Object oldInput, Object newInput) {}
 
   override Object[] getElements(Object inputElement) {
-    if(inputElement==null) {
+    if (inputElement == null) {
       return newArrayList
     }
     return inputElement.allElements
@@ -38,15 +38,17 @@ class ModelPatchContentProvider implements ITreeContentProvider {
   }
 
   override boolean hasChildren(Object element) {
-    return element.allElements.size>0
+    return element.allElements.size > 0
   }
 
   private dispatch def List<? extends Object> getAllElements(Object patch) {
     return newArrayList
   }
+
   private dispatch def List<? extends Object> getAllElements(ModelPatch patch) {
     return patch.entries
   }
+
   private dispatch def List<? extends Object> getAllElements(ModelPatchEntry ee) {
     return newArrayList
   }

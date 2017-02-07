@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2016-2017 Thales Global Services S.A.S.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;   Abel Hegedus (IncQuery Labs Ltd.) - initial API and implementation"
+    modelDirectory="/org.eclipse.emf.diffmerge.patch.persistence.emf/src" modelPluginID="org.eclipse.emf.diffmerge.patch.persistence.emf"
+    modelName="EModelPatch" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    runtimeVersion="2.11" operationReflection="true" importOrganizing="true">
+  <foreignModel>modelpatch.ecore</foreignModel>
+  <genPackages prefix="EModelPatch" basePackage="org.eclipse.emf.diffmerge.patch.persistence.emf"
+      disposableProviderFactory="true" ecorePackage="modelpatch.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="modelpatch.ecore#//EChangeDirection">
+      <genEnumLiterals ecoreEnumLiteral="modelpatch.ecore#//EChangeDirection/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="modelpatch.ecore#//EChangeDirection/REMOVE"/>
+    </genEnums>
+    <genClasses ecoreClass="modelpatch.ecore#//EModelPatch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EModelPatch/entries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EModelPatch/metadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EModelPatch/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EModelPatch/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EModelPatch/types"/>
+    </genClasses>
+    <genClasses ecoreClass="modelpatch.ecore#//EModelPatchMetadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchMetadata/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchMetadata/createdAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchMetadata/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchMetadata/input"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="modelpatch.ecore#//EModelPatchEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchEntry/direction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EModelPatchEntry/context"/>
+    </genClasses>
+    <genClasses ecoreClass="modelpatch.ecore#//EIdentifiable" labelFeature="#//emodelpatch/EIdentifiable/targetIdentifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EIdentifiable/targetIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EIdentifiable/description"/>
+    </genClasses>
+    <genClasses ecoreClass="modelpatch.ecore#//EElementEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EElementEntry/type"/>
+    </genClasses>
+    <genClasses ecoreClass="modelpatch.ecore#//EModelPatchEMFMetadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchEMFMetadata/modelUris"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchEMFMetadata/usedNamespaceUris"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="modelpatch.ecore#//EStructuralFeatureEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EStructuralFeatureEntry/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="modelpatch.ecore#//EReferenceEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelpatch.ecore#//EReferenceEntry/target"/>
+    </genClasses>
+    <genClasses ecoreClass="modelpatch.ecore#//EAttributeEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EAttributeEntry/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="modelpatch.ecore#//EModelPatchElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelpatch.ecore#//EModelPatchElement/elementIdentifier"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

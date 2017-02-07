@@ -76,14 +76,12 @@ class DialogFactory {
         }
 
         selectAndReveal(file)
-        if(file.location!=null) {
+        if (file.location != null) {
           path = file.location.toString
         }
 
         return true;
       }
-
-
 
     } => [
       it.windowTitle = "Modelpatch file"
@@ -105,7 +103,7 @@ class DialogFactory {
         }
       }
     } catch (PartInitException e) {
-      openError(window.getShell(), "Modelpatch editor cannot be opened",e.getMessage(), e)
+      openError(window.getShell(), "Modelpatch editor cannot be opened", e.getMessage(), e)
     }
   }
 

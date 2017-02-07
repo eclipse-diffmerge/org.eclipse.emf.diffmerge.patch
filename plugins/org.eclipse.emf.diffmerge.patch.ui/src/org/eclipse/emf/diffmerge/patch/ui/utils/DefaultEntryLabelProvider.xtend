@@ -22,7 +22,8 @@ class DefaultEntryLabelProvider implements IEntryLabelProvider {
     return entry.toString
   }
 
-  override shortDescription(ModelPatchEntry entry) '''«entry.direction.toString.toLowerCase.toFirstUpper» «entry.entryType.toString.toLowerCase.toFirstUpper»'''
+  override shortDescription(
+    ModelPatchEntry entry) '''«entry.direction.toString.toLowerCase.toFirstUpper» «entry.entryType.toString.toLowerCase.toFirstUpper»'''
 
   override getPropertyList(ModelPatchEntry entry) {
     val props = <EntryPropertyWrapper>newArrayList
@@ -35,7 +36,7 @@ class DefaultEntryLabelProvider implements IEntryLabelProvider {
 
     if (entry instanceof StructuralFeatureEntry) {
       props.add(new EntryPropertyWrapper("feature", entry.feature))
-      if(entry.index.isPresent) {
+      if (entry.index.isPresent) {
         props.add(new EntryPropertyWrapper("index", entry.index))
       }
 

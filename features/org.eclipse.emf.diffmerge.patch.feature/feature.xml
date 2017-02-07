@@ -72,27 +72,41 @@ Contributors:
          id="org.eclipse.emf.diffmerge.patch"
          download-size="0"
          install-size="0"
-         version="0.1.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.emf.diffmerge.patch.runtime"
          download-size="0"
          install-size="0"
-         version="0.1.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.emf.diffmerge.patch.examples"
          download-size="0"
          install-size="0"
-         version="0.1.0.qualifier"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.eclipse.emf.diffmerge.patch.ui"
          download-size="0"
          install-size="0"
-         version="0.1.0.qualifier"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.persistence.emf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.persistence.json"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

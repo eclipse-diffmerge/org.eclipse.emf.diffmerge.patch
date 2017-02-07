@@ -31,15 +31,15 @@ public class ModelPatchPersistenceJsonTest {
   @Test
   public void emptyModelPatchGsonSerialization() throws ModelPatchException {
     ModelPatch modelPatch = new ModelPatch();
-    String result = GsonModelPatchSerializer.create(this.getClass().getClassLoader()).serialize(modelPatch);
+    String result = GsonModelPatchSerializer.create(this.getClass().getClassLoader()).persist(modelPatch);
     assertTrue(result.contains("entries"));
   }
 
   @Test
   public void entriesGsonSerialization() throws ModelPatchException {
-    ModelPatch modelPatch = createPatch();
+    ModelPatch modelPatch = buildPatch();
 
-    String result = GsonModelPatchSerializer.create(this.getClass().getClassLoader()).serialize(modelPatch);
+    String result = GsonModelPatchSerializer.create(this.getClass().getClassLoader()).persist(modelPatch);
     System.out.println(result);
     assertTrue(result.contains("entries"));
   }
@@ -48,7 +48,7 @@ public class ModelPatchPersistenceJsonTest {
   public void modelPatchBuilderGson() throws ModelPatchException {
     ModelPatch modelPatch = buildPatch();
 
-    String result = GsonModelPatchSerializer.create(this.getClass().getClassLoader()).serialize(modelPatch);
+    String result = GsonModelPatchSerializer.create(this.getClass().getClassLoader()).persist(modelPatch);
     System.out.println(result);
     assertTrue(result.contains("entries"));
 
@@ -81,35 +81,4 @@ public class ModelPatchPersistenceJsonTest {
     return builder.build();
   }
 
-  private ModelPatch createPatch(){
-    ModelPatch modelPatch = new ModelPatch();
-    ElementEntry elementEntry = new ElementEntry();
-    elementEntry.setDirection(ChangeDirection.ADD);
-
-    Identifiable elementId = new Identifiable("element1");
-    elementEntry.setContext(elementId);
-
-    Identifiable typeId = new Identifiable("type1");
-    elementEntry.setType(typeId);
-    modelPatch.getEntries().add(elementEntry);
-
-    AttributeEntry attributeEntry = new AttributeEntry();
-    attributeEntry.setDirection(ChangeDirection.ADD);
-    attributeEntry.setContext(elementId);
-    attributeEntry.setValue("value1");
-
-    Identifiable attributeId = new Identifiable("attr1");
-    attributeEntry.setFeature(attributeId);
-    modelPatch.getEntries().add(attributeEntry);
-
-    ReferenceEntry referenceEntry = new ReferenceEntry();
-    referenceEntry.setDirection(ChangeDirection.ADD);
-    referenceEntry.setContext(elementId);
-    referenceEntry.setTarget(elementId);
-
-    Identifiable referenceId = new Identifiable("ref1");
-    referenceEntry.setFeature(referenceId);
-    modelPatch.getEntries().add(referenceEntry);
-    return modelPatch;
-  }
 }
