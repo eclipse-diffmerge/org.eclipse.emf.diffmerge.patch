@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="EMF DiffMerge Model Patch" sequenceNumber="1487943191">
+<target name="EMF DiffMerge Model Patch" sequenceNumber="1489070718">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.200.v20150602-1417"/>
@@ -18,11 +18,7 @@
       <repository location="http://download.eclipse.org/releases/mars/201602261000/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.emf.diffmerge.sdk.feature.feature.group" version="0.7.0.v20161114-0851"/>
-      <repository location="http://download.eclipse.org/diffmerge/updates/oxygen/official"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201702171730"/>
+      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201703031730"/>
       <repository location="http://download.eclipse.org/viatra/updates/integration"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">

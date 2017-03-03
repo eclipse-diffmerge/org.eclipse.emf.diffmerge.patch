@@ -16,10 +16,6 @@ location "http://download.eclipse.org/releases/mars/201602261000/" {
   org.junit
 }
 
-location "http://download.eclipse.org/diffmerge/updates/oxygen/official" {
-  org.eclipse.emf.diffmerge.sdk.feature.feature.group
-}
-
 location "http://download.eclipse.org/viatra/updates/integration" {
   org.eclipse.viatra.transformation.runtime.emf.feature.feature.group
 }
