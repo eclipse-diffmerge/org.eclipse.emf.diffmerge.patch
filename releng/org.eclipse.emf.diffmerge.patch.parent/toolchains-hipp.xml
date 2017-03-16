@@ -1,0 +1,38 @@
+<toolchains>
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <id>JavaSE-1.7</id>
+    </provides>
+    <configuration>
+      <!-- Path to JDK; JRE will not work! -->
+      <jdkHome>/opt/public/common/jdk1.7.0-latest</jdkHome>
+      <!-- Boot classpath setting is required, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=461239#c5 -->
+      <bootClassPath>
+        <includes>
+          <include>jre/lib/*</include>
+          <include>jre/lib/ext/*</include>
+          <include>jre/lib/endorsed*</include>
+        </includes>
+      </bootClassPath>
+    </configuration>
+  </toolchain>
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <id>JavaSE-1.8</id>
+    </provides>
+    <configuration>
+      <!-- Path to JDK; JRE will not work! -->
+      <jdkHome>/opt/public/common/jdk1.8.0_x64-latest</jdkHome>
+      <!-- Boot classpath setting is required, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=461239#c5 -->
+      <bootClassPath>
+        <includes>
+          <include>jre/lib/*</include>
+          <include>jre/lib/ext/*</include>
+          <include>jre/lib/endorsed*</include>
+        </includes>
+      </bootClassPath>
+    </configuration>
+  </toolchain>
+</toolchains>

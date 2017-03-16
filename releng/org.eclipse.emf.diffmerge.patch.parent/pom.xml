@@ -18,11 +18,14 @@
   <packaging>pom</packaging>
 
   <properties>
-    <tycho.version>0.24.0</tycho.version>
+    <tycho.version>1.0.0</tycho.version>
     <tycho.extras.version>${tycho.version}</tycho.extras.version>
     <xtend.compiler.version>2.10.0</xtend.compiler.version>
     <cbi.jarsigner.version>1.1.3</cbi.jarsigner.version>
     <rcptt.version>2.0.0</rcptt.version>
+    <java.version>1.7</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.skippedModules></sonar.skippedModules>
@@ -68,6 +71,7 @@
           <plugin>
             <groupId>com.mycila</groupId>
             <artifactId>license-maven-plugin</artifactId>
+            <version>3.0</version>
             <configuration>
               <inlineHeader>
                 All rights reserved. This program and the accompanying materials
@@ -78,6 +82,7 @@
               </inlineHeader>
               <useDefaultExcludes>true</useDefaultExcludes>
               <failIfMissing>true</failIfMissing>
+              <!-- Needed for EPL as placeholders would be too complicated -->
               <strictCheck>false</strictCheck>
               <aggregate>true</aggregate>
               <includes>
@@ -170,6 +175,10 @@
   <build>
     <plugins>
       <plugin>
+        <artifactId>maven-toolchains-plugin</artifactId>
+        <version>1.1</version>
+      </plugin>
+      <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
         <version>${tycho.version}</version>
@@ -258,13 +267,46 @@
           <version>3.0</version>
         </plugin>
         <plugin>
-					<groupId>org.eclipse.tycho.extras</groupId>
-					<artifactId>tycho-source-feature-plugin</artifactId>
-					<version>${tycho.version}</version>
-					<configuration>
-						<labelSuffix xml:space="preserve"> with Sources</labelSuffix>
-					</configuration>
-				</plugin>
+          <groupId>org.eclipse.tycho.extras</groupId>
+          <artifactId>tycho-source-feature-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <configuration>
+            <labelSuffix xml:space="preserve"> with Sources</labelSuffix>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-toolchains-plugin</artifactId>
+          <version>1.1</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>toolchain</goal>
+              </goals>
+              <configuration>
+                <toolchains>
+                  <jdk>
+                    <id>JavaSE-${java.version}</id>
+                  </jdk>
+                </toolchains>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-compiler-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <useJDK>BREE</useJDK>
+            <useProjectSettings>true</useProjectSettings>
+            <excludeResources>
+              <excludeResource>**/.gitignore</excludeResource>
+            </excludeResources>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
