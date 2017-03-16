@@ -16,21 +16,28 @@
   <name>EMF DiffMerge Model Patch</name>
   <url></url>
   <packaging>pom</packaging>
-    <properties>
+
+  <properties>
     <tycho.version>0.24.0</tycho.version>
+    <tycho.extras.version>${tycho.version}</tycho.extras.version>
     <xtend.compiler.version>2.10.0</xtend.compiler.version>
+    <cbi.jarsigner.version>1.1.3</cbi.jarsigner.version>
+    <rcptt.version>2.0.0</rcptt.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.skippedModules></sonar.skippedModules>
+
     <!-- Refresh URL with correct CI build -->
     <core.repo.url>https://hudson.eclipse.org/diffmerge/job/emf-diffmerge-core-master/lastSuccessfulBuild/artifact/releng/org.eclipse.emf.diffmerge.update/target/repository/</core.repo.url>
     <viatra.repository.url>http://download.eclipse.org/viatra/updates/integration</viatra.repository.url>
     <viatra.compiler.version>1.6.0-SNAPSHOT</viatra.compiler.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.skippedModules></sonar.skippedModules>
-    <rcptt.version>2.0.0</rcptt.version>
+
     <!-- Composite site related properties -->
     <patch.updates.label>EMF DiffMerge Model Patch</patch.updates.label>
     <patch.updates.dir>updates</patch.updates.dir>
     <patch.download.area>target/composite</patch.download.area>
   </properties>
+
   <modules>
     <!-- Target platform -->
     <module>../org.eclipse.emf.diffmerge.patch.target</module>
@@ -98,6 +105,66 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>sign</id>
+      <activation>
+        <!-- Signing can be manually applied by -Psign; but can only be executed
+          on hudson.eclipse.org -->
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-pack200a-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <executions>
+              <execution>
+                <id>pack200-normalize</id>
+                <goals>
+                  <goal>normalize</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Note that plugins bound to same phase will be executed in the same
+            order as they are listed, so that metadata generated after signing -->
+          <plugin>
+            <groupId>org.eclipse.cbi.maven.plugins</groupId>
+            <artifactId>eclipse-jarsigner-plugin</artifactId>
+            <version>${cbi.jarsigner.version}</version>
+            <executions>
+              <execution>
+                <id>sign</id>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <phase>verify</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-pack200b-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <executions>
+              <execution>
+                <id>pack200-pack</id>
+                <goals>
+                  <goal>pack</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>cbi-releases</id>
+          <url>https://repo.eclipse.org/content/repositories/cbi-releases/</url>
+        </pluginRepository>
+      </pluginRepositories>
     </profile>
   </profiles>
   <build>
@@ -190,6 +257,14 @@
           <artifactId>license-maven-plugin</artifactId>
           <version>3.0</version>
         </plugin>
+        <plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-source-feature-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<labelSuffix xml:space="preserve"> with Sources</labelSuffix>
+					</configuration>
+				</plugin>
       </plugins>
     </pluginManagement>
   </build>

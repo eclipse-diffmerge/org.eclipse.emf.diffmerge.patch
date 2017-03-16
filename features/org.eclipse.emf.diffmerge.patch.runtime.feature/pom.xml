@@ -7,7 +7,7 @@
     http://www.eclipse.org/legal/epl-v10.html
 
     Contributors:
-        Abel Hegedus, Tamas Borbas, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
+         Abel Hegedus, Tamas Borbas, Balazs Grill, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
  -->
 
 <project
@@ -19,7 +19,7 @@
     <groupId>org.eclipse.emf.diffmerge.patch</groupId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>org.eclipse.emf.diffmerge.patch.feature.dependencies</artifactId>
+  <artifactId>org.eclipse.emf.diffmerge.patch.runtime.feature</artifactId>
   <packaging>eclipse-feature</packaging>
   <version>0.1.0-SNAPSHOT</version>
     <properties>
@@ -33,23 +33,6 @@
         <version>${tycho.version}</version>
         <configuration>
           <includeAllDependencies>true</includeAllDependencies>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-source-feature-plugin</artifactId>
-        <version>${tycho.extras.version}</version>
-        <executions>
-          <execution>
-            <id>source-feature</id>
-            <phase>package</phase>
-            <goals>
-              <goal>source-feature</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <skip>true</skip>
         </configuration>
       </plugin>
     </plugins>

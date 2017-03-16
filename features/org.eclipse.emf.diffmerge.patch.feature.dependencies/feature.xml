@@ -29,10 +29,6 @@ Contributors:
     Abel Hegedus, Tamas Borbas, Balazs Grill, Peter Lunk, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
-
    <includes
          id="org.eclipse.emf"
          version="0.0.0"/>
@@ -52,29 +48,6 @@ Contributors:
    <includes
          id="org.eclipse.gmf"
          version="0.0.0"/>
-
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.viatra.examples.cps.model" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.viatra.examples.cps.deployment" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.xbase.lib" version="2.9.0" match="compatible"/>
-      <import plugin="org.eclipse.xtend.lib.macro" version="2.9.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.common" version="2.11.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.11.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.edit" version="2.11.0" match="compatible"/>
-      <import plugin="org.eclipse.compare"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.emf.workspace"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.5.0" match="compatible"/>
-      <import plugin="com.google.guava" version="10.0.1"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.ui.ide"/>
-   </requires>
 
    <plugin
          id="com.google.guava"

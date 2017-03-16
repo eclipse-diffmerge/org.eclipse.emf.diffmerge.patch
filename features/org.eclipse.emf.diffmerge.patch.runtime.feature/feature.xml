@@ -10,15 +10,15 @@
          Abel Hegedus, Tamas Borbas, Balazs Grill, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
  -->
 <feature
-      id="org.eclipse.emf.diffmerge.patch.feature"
-      label="Model Patch Feature"
+      id="org.eclipse.emf.diffmerge.patch.runtime.feature"
+      label="Model Patch Runtime Feature"
       version="0.1.0.qualifier"
       provider-name="Eclipse Modeling Project"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
 
    <description>
-      EMF Diff/Merge Model Patch feature
+      EMF Diff/Merge Model Patch Runtime feature
    </description>
 
    <copyright url="http://www.eclipse.org/legal/epl-v10.html">
@@ -29,18 +29,29 @@ Contributors:
     Abel Hegedus, Tamas Borbas, Balazs Grill, Peter Lunk, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
    </copyright>
 
-   <includes
-         id="org.eclipse.emf.diffmerge.patch.runtime.feature"
-         version="0.0.0"/>
-
    <plugin
-         id="org.eclipse.emf.diffmerge.patch.examples"
+         id="org.eclipse.emf.diffmerge.patch"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
-         id="org.eclipse.emf.diffmerge.patch.ui"
+         id="org.eclipse.emf.diffmerge.patch.runtime"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.persistence.emf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.diffmerge.patch.persistence.json"
          download-size="0"
          install-size="0"
          version="0.0.0"
