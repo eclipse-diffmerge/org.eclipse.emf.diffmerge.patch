@@ -45,7 +45,7 @@ class ModelpatchApplicationWizard extends Wizard {
   }
 
   override canFinish() {
-    return container.currentPage == resultPage || (container.currentPage == edmPage && edmPage.canFinish)
+    return container.currentPage == resultPage || (container.currentPage == edmPage && edmPage.pageComplete)
   }
 
   override boolean performFinish() {
@@ -66,24 +66,15 @@ class ModelpatchApplicationWizard extends Wizard {
   }
 
   override IWizardPage getNextPage(IWizardPage currentPage) {
-    try {
-      switch (currentPage) {
-        case patchLoadingPage: {
-          dto.loadPatch(patchLoadingPage.getSelectedFilePath())
-          return patchModificationPage
-        }
-        case patchModificationPage: {
-          return resultPage
-        }
-        case resultPage: {
-          return edmPage
-        }
+    if (currentPage == patchLoadingPage) {
+      try {
+        dto.loadPatch(patchLoadingPage.getSelectedFilePath())
+      } catch (ModelPatchException e) {
+        e.printStackTrace()
       }
-    } catch (ModelPatchException e) {
-      e.printStackTrace()
     }
 
-    return null
+    return super.getNextPage(currentPage)
   }
 
 }

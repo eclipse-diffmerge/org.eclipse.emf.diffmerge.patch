@@ -12,6 +12,7 @@ package org.eclipse.emf.diffmerge.patch.ui.wizards.pages;
 
 import org.eclipse.compare.CompareEditorInput;
 import org.eclipse.emf.diffmerge.patch.ui.utils.ModelpatchApplicationDTO;
+import org.eclipse.emf.diffmerge.ui.EMFDiffMergeUIPlugin;
 import org.eclipse.emf.diffmerge.ui.viewers.ComparisonViewer;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
@@ -26,7 +27,6 @@ import org.eclipse.swt.widgets.Composite;
 
 public class ModelpatchEDMWizardPage extends WizardPage {
   ModelpatchApplicationDTO dto;
-  public boolean canFinish = false;
 
   ComparisonViewer comp;
 
@@ -43,7 +43,7 @@ public class ModelpatchEDMWizardPage extends WizardPage {
 
   /**
    * Create contents of the wizard.
-   * 
+   *
    * @param parent
    */
   public void createControl(Composite parent) {
@@ -51,42 +51,47 @@ public class ModelpatchEDMWizardPage extends WizardPage {
 
     setControl(container);
     container.setLayout(new GridLayout(1, false));
-    comp = new ComparisonViewer(container) {
-      @Override
-      protected void setupToolBars() {
-        // We only need the lower tool bars
-        setupToolsDetails(_viewerFeatures.getToolbar());
-        setupToolsDetailsSide(_viewerValuesLeft.getToolbar(), true);
-        setupToolsDetailsSide(_viewerValuesRight.getToolbar(), false);
-        addSelectionChangedListener(new ISelectionChangedListener() {
-          /**
-           * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
-           */
-          public void selectionChanged(SelectionChangedEvent event_p) {
-            refreshTools();
-          }
-        });
-        refreshTools();
-        addPropertyChangeListener(new IPropertyChangeListener() {
-          /**
-           * @see org.eclipse.jface.util.IPropertyChangeListener#propertyChange(org.eclipse.jface.util.PropertyChangeEvent)
-           */
-          public void propertyChange(PropertyChangeEvent event_p) {
-            if (CompareEditorInput.DIRTY_STATE.equals(event_p.getProperty()) && event_p.getNewValue() instanceof Boolean
-                && ((Boolean) event_p.getNewValue()).booleanValue()) {
-              canFinish = true;
-              setPageComplete(true);
+
+    // AbstractComparisonViewer runs into NPE otherwise (and causes WindowBuilder parse error)
+    if(EMFDiffMergeUIPlugin.getDefault() != null) {
+      comp = new ComparisonViewer(container) {
+        @Override
+        protected void setupToolBars() {
+          // We only need the lower tool bars
+          setupToolsDetails(_viewerFeatures.getToolbar());
+          setupToolsDetailsSide(_viewerValuesLeft.getToolbar(), true);
+          setupToolsDetailsSide(_viewerValuesRight.getToolbar(), false);
+          addSelectionChangedListener(new ISelectionChangedListener() {
+            /**
+             * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+             */
+            public void selectionChanged(SelectionChangedEvent event_p) {
+              refreshTools();
             }
-          }
-        });
-      }
-    };
-    comp.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+          });
+          refreshTools();
+          addPropertyChangeListener(new IPropertyChangeListener() {
+            /**
+             * @see org.eclipse.jface.util.IPropertyChangeListener#propertyChange(org.eclipse.jface.util.PropertyChangeEvent)
+             */
+            public void propertyChange(PropertyChangeEvent event_p) {
+              if (CompareEditorInput.DIRTY_STATE.equals(event_p.getProperty()) && event_p.getNewValue() instanceof Boolean
+                  && ((Boolean) event_p.getNewValue()).booleanValue()) {
+                setPageComplete(true);
+              }
+            }
+          });
+        }
+
+      };
+      comp.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+    }
+    setPageComplete(false);
   }
 
   @Override
   public void setVisible(boolean visible) {
-    if (visible == true) {
+    if (visible) {
       dto.prepareDiffNode();
       dto.diffNode.updateDifferenceNumbers();
       comp.setInput(dto.diffNode);

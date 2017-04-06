@@ -54,7 +54,7 @@ public class ModelpatchResultWizardPage extends WizardPage {
 
   /**
    * Create the dialog.
-   * 
+   *
    * @param dto
    */
   public ModelpatchResultWizardPage(ModelpatchApplicationDTO dto) {
@@ -68,7 +68,7 @@ public class ModelpatchResultWizardPage extends WizardPage {
     if (visible) {
       dto.applyPatch();
       final List<ModelPatchDiagnosticElement> input = getTableInput();
-      if (input.size() == 0) {
+      if (input.isEmpty()) {
         stack.topControl = lblNoProblem;
       } else {
         tvDiagnostics.setInput(input);
@@ -90,7 +90,7 @@ public class ModelpatchResultWizardPage extends WizardPage {
 
   /**
    * Create contents of the dialog.
-   * 
+   *
    * @param parent
    */
   @Override
