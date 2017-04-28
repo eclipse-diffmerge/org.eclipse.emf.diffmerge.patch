@@ -16,8 +16,6 @@ import org.eclipse.emf.diffmerge.ui.EMFDiffMergeUIPlugin;
 import org.eclipse.emf.diffmerge.ui.viewers.ComparisonViewer;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
@@ -57,19 +55,7 @@ public class ModelpatchEDMWizardPage extends WizardPage {
       comp = new ComparisonViewer(container) {
         @Override
         protected void setupToolBars() {
-          // We only need the lower tool bars
-          setupToolsDetails(_viewerFeatures.getToolbar());
-          setupToolsDetailsSide(_viewerValuesLeft.getToolbar(), true);
-          setupToolsDetailsSide(_viewerValuesRight.getToolbar(), false);
-          addSelectionChangedListener(new ISelectionChangedListener() {
-            /**
-             * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
-             */
-            public void selectionChanged(SelectionChangedEvent event_p) {
-              refreshTools();
-            }
-          });
-          refreshTools();
+          super.setupToolBars();
           addPropertyChangeListener(new IPropertyChangeListener() {
             /**
              * @see org.eclipse.jface.util.IPropertyChangeListener#propertyChange(org.eclipse.jface.util.PropertyChangeEvent)

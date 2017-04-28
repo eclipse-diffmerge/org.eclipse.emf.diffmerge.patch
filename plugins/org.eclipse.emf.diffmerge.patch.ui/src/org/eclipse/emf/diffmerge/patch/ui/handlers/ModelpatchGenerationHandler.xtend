@@ -25,6 +25,7 @@ import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.swt.widgets.Shell
 import org.eclipse.ui.IWorkbench
 import org.eclipse.ui.handlers.HandlerUtil
+import org.eclipse.emf.diffmerge.ui.viewers.EMFDiffNode
 
 class ModelpatchGenerationHandler extends AbstractHandler {
   public static val String MODELPATCH_GENERATION_ERROR_TITLE = "Model Patch Generation Error"
@@ -56,6 +57,13 @@ class ModelpatchGenerationHandler extends AbstractHandler {
       }
     }
     return null
+  }
+
+  public def void generatePatchFromDiffNode(EMFDiffNode diffNode, ComparisonSelection selection, Shell shell, IWorkbench workbench) {
+    val diffs = selection.getDiffsToMerge(false, diffNode)
+    if (!diffs.empty) {
+      diffs.generatePatch(shell, workbench, selection)
+    }
   }
 
   public def Object generatePatch(Object diff, Shell shell, IWorkbench workbench, IStructuredSelection selection) {

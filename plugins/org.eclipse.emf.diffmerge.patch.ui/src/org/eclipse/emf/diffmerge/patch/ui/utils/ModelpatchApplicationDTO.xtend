@@ -164,7 +164,7 @@ class ModelpatchApplicationDTO {
     comparison.compute(aMatchPolicy, aDiffPolicy, aMergePolicy, aProgressMonitor)
 
     // Turn comparison into an input for viewers
-    diffNode = new EMFDiffNode(comparison as EComparison, editingDomain) => [
+    diffNode = new EMFDiffNode(comparison as EComparison, editingDomain, false, true) => [
       it.setEditable(false, true) // Lock the tmp model in EMF Diff/Merge
     ]
     return diffNode
