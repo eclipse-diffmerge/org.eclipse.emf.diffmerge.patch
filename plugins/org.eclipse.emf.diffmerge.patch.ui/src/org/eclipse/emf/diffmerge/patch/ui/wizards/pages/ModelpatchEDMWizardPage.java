@@ -14,6 +14,7 @@ import org.eclipse.compare.CompareEditorInput;
 import org.eclipse.emf.diffmerge.patch.ui.utils.ModelpatchApplicationDTO;
 import org.eclipse.emf.diffmerge.ui.EMFDiffMergeUIPlugin;
 import org.eclipse.emf.diffmerge.ui.viewers.ComparisonViewer;
+import org.eclipse.emf.diffmerge.ui.viewers.DirectedComparisonViewer;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.wizard.IWizardPage;
@@ -52,7 +53,7 @@ public class ModelpatchEDMWizardPage extends WizardPage {
 
     // AbstractComparisonViewer runs into NPE otherwise (and causes WindowBuilder parse error)
     if(EMFDiffMergeUIPlugin.getDefault() != null) {
-      comp = new ComparisonViewer(container) {
+      comp = new DirectedComparisonViewer(container) {
         @Override
         protected void setupToolBars() {
           super.setupToolBars();
