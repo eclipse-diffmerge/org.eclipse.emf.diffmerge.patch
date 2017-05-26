@@ -29,6 +29,10 @@ Contributors:
     Abel Hegedus, Tamas Borbas, Balazs Grill, Peter Lunk, Daniel Segesdi (IncQuery Labs Ltd.) - initial API and implementation
    </copyright>
 
+   <license url="%licenseURL">
+      %license
+   </license>
+
    <plugin
          id="org.eclipse.emf.diffmerge.patch"
          download-size="0"
