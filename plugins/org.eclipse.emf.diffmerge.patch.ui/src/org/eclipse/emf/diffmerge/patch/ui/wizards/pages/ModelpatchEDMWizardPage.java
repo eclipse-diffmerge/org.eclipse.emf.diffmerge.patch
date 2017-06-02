@@ -17,6 +17,7 @@ import org.eclipse.emf.diffmerge.ui.viewers.ComparisonViewer;
 import org.eclipse.emf.diffmerge.ui.viewers.DirectedComparisonViewer;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
@@ -69,8 +70,16 @@ public class ModelpatchEDMWizardPage extends WizardPage {
             }
           });
         }
-
+        
+        /**
+         * This is needed since this is disabled by DirectedComparisonViewer
+         */
+        @Override
+        protected boolean acceptContextMenuAdditions(Viewer viewer_p) {
+          return true;
+        }
       };
+      
 
       comp.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
     }
