@@ -36,8 +36,6 @@ class ComparisonSelectionUtil {
 
   protected def Collection<IDifference> getDiffsToMerge(ComparisonSelection selection, boolean toLeft_p,
     EMFDiffNode input) {
-    val showImpact = input.isShowMergeImpact();
-    input.setDefaultShowImpact(false);
     val Role destination = Role.REFERENCE;
     val isCoverChildren = true;
     val isIncrementalMode = false;
@@ -61,7 +59,6 @@ class ComparisonSelectionUtil {
     } catch (Exception ex) {
       return null;
     }
-    input.setDefaultShowImpact(showImpact);
 
     val EMap<IMatch, Collection<IDifference>> explicitImpacts = mergeInput.getImpact(true);
     val EMap<IMatch, Collection<IDifference>> implicitImpacts = mergeInput.getImpact(false);

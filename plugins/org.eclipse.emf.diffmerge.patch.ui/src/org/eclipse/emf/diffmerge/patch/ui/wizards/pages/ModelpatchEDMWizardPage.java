@@ -71,6 +71,7 @@ public class ModelpatchEDMWizardPage extends WizardPage {
         }
 
       };
+
       comp.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
     }
     setPageComplete(false);

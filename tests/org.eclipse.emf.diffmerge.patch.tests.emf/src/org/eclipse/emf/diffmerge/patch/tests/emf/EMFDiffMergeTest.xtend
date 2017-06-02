@@ -199,7 +199,7 @@ class EMFDiffMergeTest extends CPSModelPatchTest {
 
   private def String getId(EObject semanticElementDiff) {
     val eidAttribute = semanticElementDiff.eClass.EIDAttribute
-    if(eidAttribute != null){
+    if(eidAttribute !== null){
       return semanticElementDiff.eGet(eidAttribute).toString
     }
     return "NO_ID"

@@ -11,7 +11,6 @@
 package org.eclipse.emf.diffmerge.patch.runtime
 
 import com.google.common.base.Optional
-import java.util.Collection
 import java.util.Comparator
 import java.util.Set
 import org.eclipse.emf.common.util.EList
@@ -52,10 +51,7 @@ class ModelPatchRecorder {
 
   private Set<ModelPatchEntry> addedEntries = newHashSet();
 
-  /**
-   * TODO Using dispatch on public API is problematic (method will have Object parameter)
-   */
-  dispatch def ModelPatch generateModelPatch(IComparison comparison) {
+  def ModelPatch generateModelPatch(IComparison comparison) {
     val differences = (<IDifference>newArrayList => [
       it += comparison.getDifferences(Role.REFERENCE)
       it += comparison.getDifferences(Role.TARGET)
@@ -63,7 +59,7 @@ class ModelPatchRecorder {
     return differences.generateModelPatch
   }
 
-  dispatch def ModelPatch generateModelPatch(Collection<? extends IDifference> diffs) {
+  def ModelPatch generateModelPatch(Iterable<? extends IDifference> diffs) {
     val differences = <IDifference>newArrayList(diffs).sortInplace(DiffComparator.INSTANCE)
     initModelPatchBuilders()
     differences.forEach[
@@ -134,7 +130,7 @@ class ModelPatchRecorder {
     if(direction == ChangeDirection.ADD) {
       if(!feature.isMany) {
         val oldValue = owner.eGet(feature)
-        if(oldValue != null){
+        if(oldValue !== null){
           // create REMOVE if it already has value
           val oldStringValue = oldValue.toString
           val removeEntry = (entryBuilder => [
@@ -166,7 +162,7 @@ class ModelPatchRecorder {
   private dispatch def void processDifference(EReferenceValuePresence diff, Role mergeDestination, Role presenceRole, ChangeDirection direction) {
     val owner = diff.elementMatch.get(mergeDestination)
     val feature = diff.feature as EReference
-    val value = if(diff.valueMatch != null){
+    val value = if(diff.valueMatch !== null){
         diff.valueMatch.get(presenceRole)
     } else {
         diff.value
@@ -189,7 +185,7 @@ class ModelPatchRecorder {
     if(direction == ChangeDirection.ADD) {
       if(!feature.isMany) {
         val oldValue = owner.eGet(feature)
-        if(oldValue != null) {
+        if(oldValue !== null) {
           if(oldValue instanceof EObject){
             val oldValueId = new Identifiable(oldValue.id)
             // create REMOVE if it already has value
@@ -223,9 +219,9 @@ class ModelPatchRecorder {
     val element = diff.element
     var parent = diff.ownerMatch.get(mergeDestination)
     val ownershipDifference = diff.elementMatch.getOwnershipDifference(presenceRole)
-    val containmentHasPresence = ownershipDifference != null
+    val containmentHasPresence = ownershipDifference !== null
     var EReference containmentFeature = null
-    if(ownershipDifference != null){
+    if(ownershipDifference !== null){
       containmentFeature = ownershipDifference.feature
     } else {
       // in some cases, there is no ownershipDifference
@@ -254,7 +250,7 @@ class ModelPatchRecorder {
       val referenceEntry = entryBuilder.buildReferenceEntry
       if(!containmentFeature.isMany){
         val oldValue = parent.eGet(containmentFeature)
-        if(oldValue != null && oldValue != element) {
+        if(oldValue !== null && oldValue != element) {
           if(oldValue instanceof EObject){
             val oldValueId = new Identifiable(oldValue.id)
             // create REMOVE if it already has value
@@ -307,7 +303,7 @@ class ModelPatchRecorder {
   private def void saveAllAttribute(EObject element, ModelPatchBuilder patchBuilder, ModelPatchEntryBuilder entryBuilder) {
     for(eAttr : element.eClass.EAllAttributes.filter[!it.isID]) {
       val value = element.eGet(eAttr)
-      if(value != null && (eAttr.defaultValue == null || eAttr.defaultValue != value)) {
+      if(value !== null && (eAttr.defaultValue === null || eAttr.defaultValue != value)) {
         val index = element.indexOf(value, eAttr)
         val addedAttributeEntry = (entryBuilder => [
           it.feature = new Identifiable(eAttr.identify)
@@ -319,9 +315,9 @@ class ModelPatchRecorder {
     }
   }
   private def void saveAllNonContainmentRef(EObject element, ModelPatchBuilder patchBuilder, ModelPatchEntryBuilder entryBuilder) {
-    for(eRef : element.eClass.EAllReferences.filter[!it.isContainment && !it.derived && it.changeable && (it.EOpposite == null || it.EOpposite.isDerived || !it.EOpposite.isContainment)]) {
+    for(eRef : element.eClass.EAllReferences.filter[!it.isContainment && !it.derived && it.changeable && (it.EOpposite === null || it.EOpposite.isDerived || !it.EOpposite.isContainment)]) {
       val value = element.eGet(eRef)
-      if(value != null) {
+      if(value !== null) {
         if(value instanceof EObject) {
           val index = element.indexOf(value, eRef)
           val removeableReferenceEntry = (entryBuilder => [
@@ -369,7 +365,7 @@ class ModelPatchRecorder {
 
   private def String getId(EObject semanticElementDiff) {
     val eidAttribute = semanticElementDiff.eClass.EIDAttribute
-    if(eidAttribute != null){
+    if(eidAttribute !== null){
       return semanticElementDiff.eGet(eidAttribute).toString
     }
     return "NO_ID"
@@ -421,7 +417,7 @@ class ModelPatchRecorder {
     }
 
     private def int getDeepness(EObject eObject) {
-      if(eObject.eContainer == null) {
+      if(eObject.eContainer === null) {
         return 0
       }
       return eObject.eContainer.deepness+1

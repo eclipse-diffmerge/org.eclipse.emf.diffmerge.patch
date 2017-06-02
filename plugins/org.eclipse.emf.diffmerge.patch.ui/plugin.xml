@@ -42,12 +42,20 @@
                style="push">
             <visibleWhen
                   checkEnabled="false">
-               <with
-                     variable="activeEditorInput">
-                  <instanceof
-                        value="org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput">
-                  </instanceof>
-               </with>
+               <or>
+                  <with
+                       variable="activeEditorInput">
+                    <instanceof
+                          value="org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput">
+                    </instanceof>
+                 </with>
+                 <with
+                       variable="activeMenuSelection">
+                    <instanceof
+                          value="org.eclipse.emf.diffmerge.ui.diffuidata.ComparisonSelection">
+                    </instanceof>
+                 </with>
+               </or>
             </visibleWhen>
          </command>
       </menuContribution>
@@ -79,18 +87,20 @@
                   </iterate>
                </with>
                <not>
-                  <or>               <with
-                     variable="activeEditorInput">
-                  <instanceof
-                        value="org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput">
-                  </instanceof>
-               </with>
-                                     <with
-                                           variable="activeMenuSelection">
-                                        <instanceof
-                                              value="org.eclipse.emf.diffmerge.ui.diffuidata.ComparisonSelection">
-                                        </instanceof>
-                                     </with></or>
+                  <or>
+                    <with
+                         variable="activeEditorInput">
+                      <instanceof
+                            value="org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput">
+                      </instanceof>
+                   </with>
+                   <with
+                         variable="activeMenuSelection">
+                      <instanceof
+                            value="org.eclipse.emf.diffmerge.ui.diffuidata.ComparisonSelection">
+                      </instanceof>
+                   </with>
+                 </or>
                </not>
                   </and>
             </visibleWhen>
@@ -102,12 +112,20 @@
                style="push">
             <visibleWhen
                   checkEnabled="false">
-               <with
-                     variable="activeEditorInput">
-                  <instanceof
-                        value="org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput">
-                  </instanceof>
-               </with>
+               <or>
+                  <with
+                       variable="activeEditorInput">
+                    <instanceof
+                          value="org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput">
+                    </instanceof>
+                 </with>
+                 <with
+                       variable="activeMenuSelection">
+                    <instanceof
+                          value="org.eclipse.emf.diffmerge.ui.diffuidata.ComparisonSelection">
+                    </instanceof>
+                 </with>
+               </or>
             </visibleWhen>
          </command>
       </menuContribution>

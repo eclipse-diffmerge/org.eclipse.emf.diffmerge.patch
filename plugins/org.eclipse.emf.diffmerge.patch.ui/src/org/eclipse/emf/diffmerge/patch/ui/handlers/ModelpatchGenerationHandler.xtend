@@ -14,6 +14,8 @@ import java.io.File
 import org.eclipse.core.commands.AbstractHandler
 import org.eclipse.core.commands.ExecutionEvent
 import org.eclipse.core.commands.ExecutionException
+import org.eclipse.emf.diffmerge.api.Role
+import org.eclipse.emf.diffmerge.api.diff.IDifference
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchException
 import org.eclipse.emf.diffmerge.patch.runtime.ModelPatchRecorder
 import org.eclipse.emf.diffmerge.patch.ui.preferences.ModelPatchPreferenceProvider
@@ -21,11 +23,12 @@ import org.eclipse.emf.diffmerge.patch.ui.utils.DialogFactory
 import org.eclipse.emf.diffmerge.patch.ui.utils.SerializerProvider
 import org.eclipse.emf.diffmerge.ui.diffuidata.ComparisonSelection
 import org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput
+import org.eclipse.emf.diffmerge.ui.viewers.EMFDiffNode
 import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.swt.widgets.Shell
 import org.eclipse.ui.IWorkbench
 import org.eclipse.ui.handlers.HandlerUtil
-import org.eclipse.emf.diffmerge.ui.viewers.EMFDiffNode
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain
 
 class ModelpatchGenerationHandler extends AbstractHandler {
   public static val String MODELPATCH_GENERATION_ERROR_TITLE = "Model Patch Generation Error"
@@ -38,24 +41,37 @@ class ModelpatchGenerationHandler extends AbstractHandler {
     var IStructuredSelection selection = null
 
     try {
-      selection = HandlerUtil.getCurrentSelection(event) as IStructuredSelection
+      selection = HandlerUtil.getActiveMenuSelection(event) as IStructuredSelection
+      if(selection === null) {
+        selection = HandlerUtil.getCurrentSelection(event) as IStructuredSelection
+      }
     } catch (Exception ex) {
       ex.printStackTrace
     }
 
     val part = HandlerUtil.getActiveEditorInput(event)
+    var EMFDiffNode diffNode = null
     if (part instanceof EMFDiffMergeEditorInput) {
-      val diffNode = part.compareResult
-      val comparison = diffNode.actualComparison
-      if (selection instanceof ComparisonSelection) {
-        val diffs = selection.getDiffsToMerge(false, diffNode)
-        if (!diffs.empty) {
-          diffs.generatePatch(shell, workbench, selection)
-        }
-      } else {
-        comparison.generatePatch(shell, workbench, selection)
-      }
+      diffNode = part.compareResult
     }
+
+    if (selection instanceof ComparisonSelection) {
+      val comparison = selection.selectedMatches.head.mapping.comparison
+      val editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(comparison)
+      if(diffNode === null) {
+        diffNode = new EMFDiffNode(comparison, editingDomain, true, true)
+        diffNode.updateDifferenceNumbers();
+      }
+      val diffs = selection.getDiffsToMerge(false, diffNode)
+      if (!diffs.empty) {
+        diffs.generatePatch(shell, workbench, selection)
+      }
+    } else if (diffNode !== null){
+      val comparison = diffNode.actualComparison
+      val differences = comparison.getDifferences(Role.REFERENCE) + comparison.getDifferences(Role.TARGET)
+      differences.generatePatch(shell, workbench, selection)
+    }
+
     return null
   }
 
@@ -66,7 +82,7 @@ class ModelpatchGenerationHandler extends AbstractHandler {
     }
   }
 
-  public def Object generatePatch(Object diff, Shell shell, IWorkbench workbench, IStructuredSelection selection) {
+  public def void generatePatch(Iterable<IDifference> diff, Shell shell, IWorkbench workbench, IStructuredSelection selection) {
     extension val DialogFactory factory = new DialogFactory(shell)
     val SerializerProvider serializerProvider = new SerializerProvider
     try {
@@ -95,7 +111,7 @@ class ModelpatchGenerationHandler extends AbstractHandler {
       ex.printStackTrace
       openErrorDialog(MODELPATCH_GENERATION_ERROR_TITLE, "Unknown error!", ex, "org.eclipse.emf.diffmerge.patch")
     }
-    return null
+    return
   }
 
   def boolean isFileGenerated(File file) {
