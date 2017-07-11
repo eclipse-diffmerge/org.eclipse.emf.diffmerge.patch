@@ -50,7 +50,7 @@
                     </instanceof>
                  </with>
                  <with
-                       variable="activeMenuSelection">
+                       variable="selection">
                     <instanceof
                           value="org.eclipse.emf.diffmerge.ui.diffuidata.ComparisonSelection">
                     </instanceof>

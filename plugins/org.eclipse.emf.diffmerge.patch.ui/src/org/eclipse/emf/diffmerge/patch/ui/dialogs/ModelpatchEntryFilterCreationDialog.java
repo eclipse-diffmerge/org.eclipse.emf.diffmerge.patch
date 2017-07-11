@@ -12,6 +12,11 @@ package org.eclipse.emf.diffmerge.patch.ui.dialogs;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.emf.diffmerge.patch.api.ChangeDirection;
+import org.eclipse.emf.diffmerge.patch.api.EntryType;
+import org.eclipse.emf.diffmerge.patch.api.IModelPatchEntryFilter;
+import org.eclipse.emf.diffmerge.patch.api.filters.EntryDirectionFilter;
+import org.eclipse.emf.diffmerge.patch.api.filters.EntryTypeFilter;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -21,7 +26,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -31,12 +35,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
-
-import org.eclipse.emf.diffmerge.patch.api.ChangeDirection;
-import org.eclipse.emf.diffmerge.patch.api.EntryType;
-import org.eclipse.emf.diffmerge.patch.api.IModelPatchEntryFilter;
-import org.eclipse.emf.diffmerge.patch.api.filters.EntryDirectionFilter;
-import org.eclipse.emf.diffmerge.patch.api.filters.EntryTypeFilter;
 
 public class ModelpatchEntryFilterCreationDialog extends Dialog {
   @SuppressWarnings("unused")
@@ -60,7 +58,7 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
    */
   public ModelpatchEntryFilterCreationDialog(Shell parentShell) {
     super(parentShell);
-    setShellStyle(SWT.TITLE | SWT.APPLICATION_MODAL);
+    setShellStyle(SWT.TITLE | SWT.APPLICATION_MODAL | SWT.RESIZE);
   }
 
   private String title;
@@ -86,44 +84,40 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
    * @param parent
    */
   @Override
-  protected Control createDialogArea(Composite parent) {
-    Composite container = (Composite) super.createDialogArea(parent);
-    GridLayout gridLayout = (GridLayout) container.getLayout();
-    gridLayout.numColumns = 2;
+  protected Control createDialogArea(Composite parent) {Composite container = (Composite) super.createDialogArea(parent);
 
-    lblFilterType = new Label(container, SWT.NONE);
-    GridData gd_lblFilterType = new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1);
-    gd_lblFilterType.widthHint = 55;
-    lblFilterType.setLayoutData(gd_lblFilterType);
+    Composite composite_1 = new Composite(container, SWT.NONE);
+    composite_1.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+    composite_1.setLayout(new GridLayout(2, false));
+    lblFilterType = new Label(composite_1, SWT.NONE);
+    lblFilterType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
     lblFilterType.setText("Filter type:");
-
-    ComboViewer cvFilterType = new ComboViewer(container, SWT.READ_ONLY);
+  
+    ComboViewer cvFilterType = new ComboViewer(composite_1, SWT.READ_ONLY);
     cvFilterType.setContentProvider(new ArrayContentProvider());
     cvFilterType.setInput(ModelpatchEntryFilterType.values());
     cFilterType = cvFilterType.getCombo();
     cFilterType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
     cFilterType.select(0);
-
-    final Composite composite = new Composite(container, SWT.NONE);
+  
+    final Composite composite = new Composite(composite_1, SWT.NONE);
+    composite.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
     final StackLayout stack = new StackLayout();
     composite.setLayout(stack);
-    composite.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, true, 2, 1));
-
+  
     final Composite cmpNothing = new Composite(composite, SWT.NONE);
     cmpNothing.setLayout(new FillLayout(SWT.HORIZONTAL));
-
+  
     final Composite grpDirectionFilter = new Composite(composite, SWT.NONE);
     GridLayout gl_grpDirectionFilter = new GridLayout(3, false);
     gl_grpDirectionFilter.marginWidth = 0;
     gl_grpDirectionFilter.marginHeight = 0;
     grpDirectionFilter.setLayout(gl_grpDirectionFilter);
-
+  
     lblDirection = new Label(grpDirectionFilter, SWT.NONE);
-    GridData gd_lblDirection = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
-    gd_lblDirection.widthHint = 55;
-    lblDirection.setLayoutData(gd_lblDirection);
+    lblDirection.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
     lblDirection.setText("Direction:");
-
+  
     Button btnAdd = new Button(grpDirectionFilter, SWT.RADIO);
     btnAdd.addSelectionListener(new SelectionAdapter() {
       @Override
@@ -133,7 +127,7 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
     });
     btnAdd.setSelection(true);
     btnAdd.setText("ADD");
-
+  
     Button btnRemove = new Button(grpDirectionFilter, SWT.RADIO);
     btnRemove.addSelectionListener(new SelectionAdapter() {
       @Override
@@ -142,19 +136,17 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
       }
     });
     btnRemove.setText("REMOVE");
-
+  
     final Composite grpEntryTypeFilter = new Composite(composite, SWT.NONE);
     GridLayout gl_grpEntryTypeFilter = new GridLayout(4, false);
     gl_grpEntryTypeFilter.marginHeight = 0;
     gl_grpEntryTypeFilter.marginWidth = 0;
     grpEntryTypeFilter.setLayout(gl_grpEntryTypeFilter);
-
+  
     lblEntryType = new Label(grpEntryTypeFilter, SWT.NONE);
-    GridData gd_lblEntryType = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
-    gd_lblEntryType.widthHint = 55;
-    lblEntryType.setLayoutData(gd_lblEntryType);
+    lblEntryType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
     lblEntryType.setText("Entry type:");
-
+  
     Button btnAttribute = new Button(grpEntryTypeFilter, SWT.RADIO);
     btnAttribute.addSelectionListener(new SelectionAdapter() {
       @Override
@@ -164,7 +156,7 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
     });
     btnAttribute.setSelection(true);
     btnAttribute.setText("Attribute");
-
+  
     Button btnElement = new Button(grpEntryTypeFilter, SWT.RADIO);
     btnElement.addSelectionListener(new SelectionAdapter() {
       @Override
@@ -173,7 +165,7 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
       }
     });
     btnElement.setText("Element");
-
+  
     Button btnReference = new Button(grpEntryTypeFilter, SWT.RADIO);
     btnReference.addSelectionListener(new SelectionAdapter() {
       @Override
@@ -182,9 +174,11 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
       }
     });
     btnReference.setText("Reference");
-
+  
     stack.topControl = grpDirectionFilter;
-
+    new Label(composite_1, SWT.NONE);
+    new Label(composite_1, SWT.NONE);
+  
     cFilterType.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
@@ -202,9 +196,9 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
         }
         composite.layout();
       }
-
+  
     });
-
+  
     return container;
   }
 
@@ -243,14 +237,6 @@ public class ModelpatchEntryFilterCreationDialog extends Dialog {
     });
     createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
     m_bindingContext = initDataBindings();
-  }
-
-  /**
-   * Return the initial size of the dialog.
-   */
-  @Override
-  protected Point getInitialSize() {
-    return new Point(310, 160);
   }
 
   public IModelPatchEntryFilter getCreatedFilter() {

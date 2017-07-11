@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="EMF DiffMerge Model Patch" sequenceNumber="1489070718">
+<target name="EMF DiffMerge Model Patch" sequenceNumber="1499791752">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.200.v20150602-1417"/>
@@ -18,15 +18,15 @@
       <repository location="http://download.eclipse.org/releases/mars/201602261000/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201703031730"/>
-      <repository location="http://download.eclipse.org/viatra/updates/integration"/>
+      <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201706141007"/>
+      <repository location="http://download.eclipse.org/viatra/updates/release/1.6.0"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.license.feature.group" version="1.0.1.v20140414-1359"/>
       <repository location="http://download.eclipse.org/cbi/updates/license/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.viatra.examples.cps.metamodel.feature.feature.group" version="0.1.0.201702231015"/>
+      <unit id="org.eclipse.viatra.examples.cps.metamodel.feature.feature.group" version="0.1.0.201707100825"/>
       <repository location="http://download.eclipse.org/viatra/examples/cps/"/>
     </location>
   </locations>

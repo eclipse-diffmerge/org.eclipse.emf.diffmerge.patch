@@ -260,6 +260,9 @@ public class ModelPatchEditorPart extends EditorPart {
 
   @Override
   public boolean isDirty() {
+    if (originalModelPatch == null) {
+      return false;
+    }
     return !originalModelPatch.equals(modifiedModelPatch);
   }
 
