@@ -126,7 +126,7 @@ class ComparisonSelectionUtil {
    * to the given criteria
    * @param toMerge_p a non-null, modifiable list
    * @param match_p a non-null match
-   * @param destination_p a non-null role which is TARGET or REFEREBCE
+   * @param destination_p a non-null role which is TARGET or REFERENCE
    * @param incrementalMode_p whether optional deletions must be skipped
    */
   protected def void addDifferencesToMerge(List<IDifference> toMerge_p, IMatch match_p, Role destination_p,
@@ -147,7 +147,7 @@ class ComparisonSelectionUtil {
    * to the given criteria
    * @param toMerge_p a non-null, modifiable list
    * @param match_p a non-null match
-   * @param destination_p a non-null role which is TARGET or REFEREBCE
+   * @param destination_p a non-null role which is TARGET or REFERENCE
    * @param incrementalMode_p whether optional deletions must be skipped
    */
   protected def void addDifferencesToMergeRec(List<IDifference> toMerge_p, IMatch match_p, Role destination_p,

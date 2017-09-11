@@ -28,7 +28,6 @@ import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.swt.widgets.Shell
 import org.eclipse.ui.IWorkbench
 import org.eclipse.ui.handlers.HandlerUtil
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain
 
 class ModelpatchGenerationHandler extends AbstractHandler {
   public static val String MODELPATCH_GENERATION_ERROR_TITLE = "Model Patch Generation Error"
@@ -56,11 +55,8 @@ class ModelpatchGenerationHandler extends AbstractHandler {
     }
 
     if (selection instanceof ComparisonSelection) {
-      val comparison = selection.selectedMatches.head.mapping.comparison
-      val editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(comparison)
       if(diffNode === null) {
-        diffNode = new EMFDiffNode(comparison, editingDomain, true, true)
-        diffNode.updateDifferenceNumbers();
+        diffNode = selection.diffNode;
       }
       val diffs = selection.getDiffsToMerge(false, diffNode)
       if (!diffs.empty) {
