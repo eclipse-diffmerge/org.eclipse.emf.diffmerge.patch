@@ -32,8 +32,8 @@
 
     <!-- Refresh URL with correct CI build -->
     <core.repo.url>https://hudson.eclipse.org/diffmerge/job/emf-diffmerge-core-master/lastSuccessfulBuild/artifact/releng/org.eclipse.emf.diffmerge.update/target/repository/</core.repo.url>
-    <viatra.repository.url>http://download.eclipse.org/viatra/updates/integration</viatra.repository.url>
-    <viatra.compiler.version>1.6.0-SNAPSHOT</viatra.compiler.version>
+    <viatra.repository.url>http://download.eclipse.org/viatra/updates/release/1.6.1</viatra.repository.url>
+    <viatra.compiler.version>1.6.1</viatra.compiler.version>
 
     <!-- Composite site related properties -->
     <patch.updates.label>EMF DiffMerge Model Patch</patch.updates.label>
@@ -312,11 +312,6 @@
   </build>
   <repositories>
     <repository>
-      <id>viatra.update</id>
-      <layout>p2</layout>
-      <url>${viatra.repository.url}</url>
-    </repository>
-    <repository>
       <id>diffmerge.core</id>
       <layout>p2</layout>
       <url>${core.repo.url}</url>
@@ -324,11 +319,8 @@
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>viatra-snapshots</id>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <url>https://repo.eclipse.org/content/repositories/viatra-snapshots/</url>
+      <id>viatra-releases</id>
+      <url>https://repo.eclipse.org/content/repositories/viatra-releases/</url>
     </pluginRepository>
     <pluginRepository>
       <id>rcptt-releases</id>
