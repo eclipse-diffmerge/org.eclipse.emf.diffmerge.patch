@@ -29,9 +29,11 @@ import org.eclipse.emf.diffmerge.patch.api.ModelPatchEntry
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchEntryBuilder
 import org.eclipse.emf.diffmerge.patch.api.ModelPatchException
 import org.eclipse.emf.diffmerge.patch.runtime.identifier.EMFIdentifierProvider
+import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.emf.ecore.util.EcoreUtil
 
 class ModelPatchRecorder {
   extension EMFIdentifierProvider identifierProvider = new EMFIdentifierProvider
@@ -112,10 +114,11 @@ class ModelPatchRecorder {
     val owner = diff.elementMatch.get(mergeDestination)
     val feature = diff.feature
     val value = diff.value
+    val eAttributeType = (feature as EAttribute).getEAttributeType()
 
     val ownerId = new Identifiable(owner.id)
     val featureId = new Identifiable(feature.identify)
-    val stringValue = value.toString
+    val stringValue = EcoreUtil.convertToString(eAttributeType, value);
 
     val presenceOwner = diff.elementMatch.get(presenceRole)
     val index = presenceOwner.indexOf(value, feature)
@@ -132,7 +135,7 @@ class ModelPatchRecorder {
         val oldValue = owner.eGet(feature)
         if(oldValue !== null){
           // create REMOVE if it already has value
-          val oldStringValue = oldValue.toString
+          val oldStringValue = EcoreUtil.convertToString(eAttributeType, oldValue);
           val removeEntry = (entryBuilder => [
             it.direction = ChangeDirection.REMOVE
             it.value = oldStringValue
@@ -307,7 +310,7 @@ class ModelPatchRecorder {
         val index = element.indexOf(value, eAttr)
         val addedAttributeEntry = (entryBuilder => [
           it.feature = new Identifiable(eAttr.identify)
-          it.value = value.toString
+          it.value = EcoreUtil.convertToString(eAttr.getEAttributeType(), value);
           it.index = index
         ]).buildAttributeEntry
         patchBuilder.addNewEntry(addedAttributeEntry)
