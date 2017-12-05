@@ -62,8 +62,8 @@ class ModelPatchRecorderTest extends CPSModelPatchTest {
 
   public static val FIRST_APP_CLASS_NEW_INSTANCE_ID = '''simple.cps.app.FirstAppClass0.inst666'''
 
-  private static CyberPhysicalSystem referenceModel
-  private static FragmentedModelScope referenceScope
+  private CyberPhysicalSystem referenceModel
+  private FragmentedModelScope referenceScope
 
   CyberPhysicalSystem modifiedModel = null
   FragmentedModelScope targetScope = null
@@ -72,12 +72,12 @@ class ModelPatchRecorderTest extends CPSModelPatchTest {
   @BeforeClass
   public static def void initializeTests() {
     initCPS
-    loadReferenceModel
   }
 
   @Before
   def void initTestCase() {
     modelPatchRecorder = new ModelPatchRecorder
+    loadReferenceModel
     initModifiedModel
   }
 
@@ -359,13 +359,186 @@ class ModelPatchRecorderTest extends CPSModelPatchTest {
 
     assertEquals('''Add attribute entry is not added''', 1, addAttributeEntries.size)
   }
+  
+  @Test
+  def multiValueAttributeAdded_AttributeAdded() {
+    // Arrange
+    referenceModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+      ]
+    ] 
+    modifiedModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+        availablePorts += 1
+        availablePorts += 2
+      ]
+    ]
+
+    val comparison = computeComparison
+
+    // Act
+    val modelPatch = modelPatchRecorder.generateModelPatch(comparison)
+
+    // Assert
+    val availablePortsAttributeName = cyberPhysicalSystemPackage.requirement_AvailablePorts.identify
+    val addAttributeEntries = modelPatch.entries.filter[
+      it.direction == ChangeDirection.ADD &&
+      it.entryType == EntryType.ATTRIBUTE &&
+      it.context.identifier == "req_id" &&
+      (it as AttributeEntry).feature.identifier == availablePortsAttributeName
+    ]
+
+    assertEquals('''Add attribute entry is not added''', 2, addAttributeEntries.size)
+  }
+  
+  @Test
+  def multiValueAttributeAdded_HierarchyAdded() {
+    // Arrange
+    modifiedModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+        availablePorts += 1
+        availablePorts += 2
+      ]
+    ]
+
+    val comparison = computeComparison
+
+    // Act
+    val modelPatch = modelPatchRecorder.generateModelPatch(comparison)
+
+    // Assert
+    val availablePortsAttributeName = cyberPhysicalSystemPackage.requirement_AvailablePorts.identify
+    val addAttributeEntries = modelPatch.entries.filter[
+      it.direction == ChangeDirection.ADD &&
+      it.entryType == EntryType.ATTRIBUTE &&
+      it.context.identifier == "req_id" &&
+      (it as AttributeEntry).feature.identifier == availablePortsAttributeName
+    ]
+
+    assertEquals('''Add attribute entry is not added''', 2, addAttributeEntries.size)
+  }
+  
+  @Test
+  def multiValueAttributeRemoved_AttributeRemoved() {
+    // Arrange
+    referenceModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+        availablePorts += 1
+        availablePorts += 2
+      ]
+    ] 
+    modifiedModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+      ]
+    ]
+
+    val comparison = computeComparison
+
+    // Act
+    val modelPatch = modelPatchRecorder.generateModelPatch(comparison)
+
+    // Assert
+    val availablePortsAttributeName = cyberPhysicalSystemPackage.requirement_AvailablePorts.identify
+    val removeAttributeEntries = modelPatch.entries.filter[
+      it.direction == ChangeDirection.REMOVE &&
+      it.entryType == EntryType.ATTRIBUTE &&
+      it.context.identifier == "req_id" &&
+      (it as AttributeEntry).feature.identifier == availablePortsAttributeName
+    ]
+
+    assertEquals('''Remove attribute entry is not added''', 2, removeAttributeEntries.size)
+  }
+  
+    @Test
+  def multiValueAttributeRemoved_AttributeChanged() {
+    // Arrange
+    referenceModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+        availablePorts += 1
+        availablePorts += 2
+      ]
+    ] 
+    val req = 
+    modifiedModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+        availablePorts += 3
+        availablePorts += 2
+      ]
+    ]
+
+    val comparison = computeComparison
+
+    // Act
+    val modelPatch = modelPatchRecorder.generateModelPatch(comparison)
+
+    // Assert
+    val availablePortsAttributeName = cyberPhysicalSystemPackage.requirement_AvailablePorts.identify
+    val removeAttributeEntries = modelPatch.entries.filter[
+      it.direction == ChangeDirection.REMOVE &&
+      it.entryType == EntryType.ATTRIBUTE &&
+      it.context.identifier == "req_id" &&
+      (it as AttributeEntry).feature.identifier == availablePortsAttributeName
+    ]
+    val addAttributeEntries = modelPatch.entries.filter[
+      it.direction == ChangeDirection.ADD &&
+      it.entryType == EntryType.ATTRIBUTE &&
+      it.context.identifier == "req_id" &&
+      (it as AttributeEntry).feature.identifier == availablePortsAttributeName
+    ]
+
+    assertEquals('''Add attribute entry is not added''', 1, addAttributeEntries.size)
+    assertEquals('''Remove attribute entry is not added''', 1, removeAttributeEntries.size)
+  }
+  
+  @Test
+  def multiValueAttributeRemoved_HierarchyRemoved() {
+    // Arrange
+    referenceModel.requests += createRequest => [
+      identifier = "request_id"
+      requirements += createRequirement => [
+        identifier = "req_id"
+        availablePorts += 1
+        availablePorts += 2
+      ]
+    ]
+
+    val comparison = computeComparison
+
+    // Act
+    val modelPatch = modelPatchRecorder.generateModelPatch(comparison)
+
+    // Assert
+    val availablePortsAttributeName = cyberPhysicalSystemPackage.requirement_AvailablePorts.identify
+    val removeAttributeEntries = modelPatch.entries.filter[
+      it.direction == ChangeDirection.REMOVE &&
+      it.entryType == EntryType.ATTRIBUTE &&
+      it.context.identifier == "req_id" &&
+      (it as AttributeEntry).feature.identifier == availablePortsAttributeName
+    ]
+
+    assertEquals('''Remove attribute entry is not added''', 2, removeAttributeEntries.size)
+  }
 
   private static def void initCPS() {
     Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(MODEL_FILE_EXTENSION, new XMIResourceFactoryImpl())
     CyberPhysicalSystemPackage.eINSTANCE.eClass()
   }
 
-  private static def void loadReferenceModel() {
+  private def void loadReferenceModel() {
     val referenceResourceSet = new ResourceSetImpl()
     val referenceResource = referenceResourceSet.getResource(URI.createFileURI(referenceModelPath), true)
     referenceModel = referenceResource.contents.filter(CyberPhysicalSystem).head

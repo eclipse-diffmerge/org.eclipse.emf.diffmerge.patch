@@ -305,15 +305,27 @@ class ModelPatchRecorder {
 
   private def void saveAllAttribute(EObject element, ModelPatchBuilder patchBuilder, ModelPatchEntryBuilder entryBuilder) {
     for(eAttr : element.eClass.EAllAttributes.filter[!it.isID]) {
-      val value = element.eGet(eAttr)
-      if(value !== null && (eAttr.defaultValue === null || eAttr.defaultValue != value)) {
-        val index = element.indexOf(value, eAttr)
-        val addedAttributeEntry = (entryBuilder => [
-          it.feature = new Identifiable(eAttr.identify)
-          it.value = EcoreUtil.convertToString(eAttr.getEAttributeType(), value);
-          it.index = index
-        ]).buildAttributeEntry
-        patchBuilder.addNewEntry(addedAttributeEntry)
+      if(element.eIsSet(eAttr)) {
+        val value = element.eGet(eAttr)
+        if(value instanceof EList) {
+          for(v : value) {
+            val index = element.indexOf(v, eAttr)
+            val addedAttributeEntry = (entryBuilder => [
+              it.feature = new Identifiable(eAttr.identify)
+              it.value = EcoreUtil.convertToString(eAttr.getEAttributeType(), v);
+              it.index = index
+            ]).buildAttributeEntry
+            patchBuilder.addNewEntry(addedAttributeEntry)
+          }
+        } else {
+          val index = element.indexOf(value, eAttr)
+          val addedAttributeEntry = (entryBuilder => [
+            it.feature = new Identifiable(eAttr.identify)
+            it.value = EcoreUtil.convertToString(eAttr.getEAttributeType(), value);
+            it.index = index
+          ]).buildAttributeEntry
+          patchBuilder.addNewEntry(addedAttributeEntry)
+        }
       }
     }
   }
