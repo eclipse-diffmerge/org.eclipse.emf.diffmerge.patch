@@ -34,8 +34,10 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.xtend.lib.annotations.Accessors
 
 class ModelPatchRecorder {
+  @Accessors
   extension EMFIdentifierProvider identifierProvider = new EMFIdentifierProvider
 
   private ModelPatchBuilder attributeRemoveBuilder
@@ -378,12 +380,8 @@ class ModelPatchRecorder {
     return ChangeDirection.REMOVE
   }
 
-  private def String getId(EObject semanticElementDiff) {
-    val eidAttribute = semanticElementDiff.eClass.EIDAttribute
-    if(eidAttribute !== null){
-      return semanticElementDiff.eGet(eidAttribute).toString
-    }
-    return "NO_ID"
+  private def String getId(EObject eObject) {
+    return identifierProvider.identifyEObject(eObject)
   }
 
   protected static class DiffComparator implements Comparator<IDifference> {

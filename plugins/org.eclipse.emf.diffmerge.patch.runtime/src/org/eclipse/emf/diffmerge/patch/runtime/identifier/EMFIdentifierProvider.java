@@ -27,13 +27,22 @@ public class EMFIdentifierProvider {
   public static final String ENUM_LITERAL_SEPARATOR = "::";
   public static final String PACKAGED_ELEMENT_SEPARATOR = "#";
 
-  private EObjectIdentifierProvider eObjectIdentifierProvider;
+  private EObjectIdentifierProvider eObjectIdentifierProvider = new IDAttributeBasedEObjectIdentifierProvider();
 
+  /**
+   * 
+   * @param eObject
+   * @return the identifier of the EObject, using the
+   *         {@link #getEObjectIdentifierProvider()} if set, NO_ID if not found
+   */
   public String identifyEObject(EObject eObject) {
     String identifier = null;
     EObjectIdentifierProvider provider = getEObjectIdentifierProvider();
-    if(provider != null){
+    if (provider != null) {
       identifier = provider.identify(eObject);
+    }
+    if (identifier == null) {
+      identifier = "NO_ID";
     }
     return identifier;
   }

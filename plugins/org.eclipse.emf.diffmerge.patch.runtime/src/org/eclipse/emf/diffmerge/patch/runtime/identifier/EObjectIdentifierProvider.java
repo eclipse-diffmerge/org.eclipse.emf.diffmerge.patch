@@ -14,6 +14,11 @@ import org.eclipse.emf.ecore.EObject;
 
 public interface EObjectIdentifierProvider {
 
+  /**
+   * 
+   * @param eObject
+   * @return the identifier for the given EObject (null if not found)
+   */
   String identify(EObject eObject);
 
 }
