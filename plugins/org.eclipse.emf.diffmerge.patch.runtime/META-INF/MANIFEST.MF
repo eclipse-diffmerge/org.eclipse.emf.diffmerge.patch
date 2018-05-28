@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.runtime
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.eclipse.emf.diffmerge;bundle-version="[0.7.0,0.10.0]",
+Require-Bundle: org.eclipse.emf.diffmerge;bundle-version="0.7.0",
  org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",
  org.eclipse.emf.ecore;bundle-version="2.10.2",
  org.eclipse.emf.edit;bundle-version="2.11.0",

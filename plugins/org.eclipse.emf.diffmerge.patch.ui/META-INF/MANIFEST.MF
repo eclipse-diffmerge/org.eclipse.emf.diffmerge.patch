@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.ui;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.emf.common.ui;bundle-version="2.10.0",
- org.eclipse.emf.diffmerge;bundle-version="[0.7.0,0.10.0]",
+ org.eclipse.emf.diffmerge;bundle-version="0.7.0",
+ org.eclipse.emf.diffmerge.ui;bundle-version="0.9.0",
  org.eclipse.core.resources,
  com.google.guava;bundle-version="15.0.0",
  org.eclipse.xtend.lib,
@@ -18,7 +19,6 @@ Require-Bundle: org.eclipse.emf.common.ui;bundle-version="2.10.0",
  org.eclipse.jface.databinding,
  org.eclipse.emf.diffmerge.patch.runtime;bundle-version="[0.1.0,0.2.0)",
  org.eclipse.ui.ide,
- org.eclipse.emf.diffmerge.ui;bundle-version="[0.9.0,0.10.0]",
  org.eclipse.viatra.query.runtime.base;bundle-version="[1.4.0,2.0.0)",
  org.eclipse.emf.diffmerge.patch.persistence.json;bundle-version="[0.1.0,0.2.0)",
  org.eclipse.emf.diffmerge.patch.persistence.emf;bundle-version="[0.1.0,0.2.0)"
