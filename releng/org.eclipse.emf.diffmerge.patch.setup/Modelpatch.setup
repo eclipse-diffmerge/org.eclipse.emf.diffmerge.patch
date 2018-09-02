@@ -27,11 +27,8 @@
     <requirement
         name="org.eclipse.xtend.sdk.feature.group"/>
     <requirement
-        name="org.eclipse.viatra.query.sdk.feature.source.feature.group"/>
-    <requirement
-        name="org.eclipse.viatra.query.sdk.feature.feature.group"/>
-    <requirement
-        name="fr.obeo.releng.targetplatform-feature.feature.group"/>
+        name="org.eclipse.viatra.query.sdk.feature.feature.group"
+        versionRange="[1.2.0,2.0.0)"/>
     <repository
         url="${eclipse.repository}"/>
     <repository
@@ -40,8 +37,6 @@
         url="${xtext.repository}"/>
     <repository
         url="${orbit.repository}"/>
-    <repository
-        url="http://mbarbero.github.io/fr.obeo.releng.targetplatform/p2/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -118,9 +113,11 @@
       <requirement
           name="org.eclipse.equinox.executable.feature.group"/>
       <requirement
-          name="org.eclipse.viatra.query.runtime.feature.feature.group"/>
+          name="org.eclipse.viatra.query.runtime.feature.feature.group"
+          versionRange="[1.2.0,2.0.0)"/>
       <requirement
-          name="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group"/>
+          name="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group"
+          versionRange="[1.2.0,2.0.0)"/>
       <requirement
           name="org.eclipse.sdk.feature.group"/>
       <requirement
@@ -260,7 +257,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="viatra.repository"
-      value="http://download.eclipse.org/viatra/updates/integration">
+      value="http://download.eclipse.org/viatra/updates/release/1.7.2">
     <description>Patterns</description>
   </setupTask>
   <setupTask

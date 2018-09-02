@@ -40,18 +40,28 @@ class ModelpatchGenerationHandler extends AbstractHandler {
     var IStructuredSelection selection = null
 
     try {
-      selection = HandlerUtil.getActiveMenuSelection(event) as IStructuredSelection
-      if(selection === null) {
-        selection = HandlerUtil.getCurrentSelection(event) as IStructuredSelection
-      }
+        val activeMenuSelection = HandlerUtil.getActiveMenuSelection(event)
+        if (activeMenuSelection instanceof IStructuredSelection) {
+            selection = activeMenuSelection
+        }
+        if (selection === null) {
+            val currentSelection = HandlerUtil.getCurrentSelection(event)
+            if (currentSelection instanceof IStructuredSelection) {
+                selection = currentSelection
+            }
+        }
     } catch (Exception ex) {
-      ex.printStackTrace
+        ex.printStackTrace
     }
 
     val part = HandlerUtil.getActiveEditorInput(event)
     var EMFDiffNode diffNode = null
     if (part instanceof EMFDiffMergeEditorInput) {
       diffNode = part.compareResult
+      val editorSelection = part.viewer.selection
+      if(editorSelection instanceof IStructuredSelection){
+        selection = editorSelection          
+      }
     }
 
     if (selection instanceof ComparisonSelection) {
@@ -62,7 +72,7 @@ class ModelpatchGenerationHandler extends AbstractHandler {
       if (!diffs.empty) {
         diffs.generatePatch(shell, workbench, selection)
       }
-    } else if (diffNode !== null){
+    } else if (selection !== null && diffNode !== null){
       val comparison = diffNode.actualComparison
       val differences = comparison.getDifferences(Role.REFERENCE) + comparison.getDifferences(Role.TARGET)
       differences.generatePatch(shell, workbench, selection)

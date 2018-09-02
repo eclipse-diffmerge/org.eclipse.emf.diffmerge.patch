@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _Stt9MNSsEeWpt76DqXjygg
-Runtime-Version: 2.2.0.201611022324
-Save-Time: 1/18/17 2:50 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 9/2/18 2:24 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -19,13 +19,15 @@ with [get-view "Package Explorer" | get-tree] {
     get-menu "Compare With/Each Other as models" | click
 }
 get-window "EMF Diff/Merge" | get-button Finish | click
+get-editor "Compare ('demo_modified' - 'demo_original')" | get-tree 
+    | select "Cyber Physical System testModel6504822858552 (10)"
 get-menu -path "Edit/Generate modelpatch" | click
 with [get-window "New File"] {
     get-tree | select "org.eclipse.emf.diffmerge.patch.examples.cps"
     get-editbox -after [get-label "File name:"] | set-text "generated2.modelpatch"
     get-button Finish | click
 }
-get-editor "ModelPatch: generated2.modelpatch" | get-tree | get-property itemCount | equals 14 | verify-true
+get-editor "ModelPatch: generated2.modelpatch" | get-tree | get-property itemCount | equals 13 | verify-true
 get-editor "ModelPatch: generated2.modelpatch" | close
 get-editor "Compare ('demo_modified' - 'demo_original')" | close
 
