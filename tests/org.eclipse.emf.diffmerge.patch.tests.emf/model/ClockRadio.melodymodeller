@@ -1051,7 +1051,7 @@
                 id="5826e8ae-6abb-44ff-8b2a-c5075fbb46ad" targetElement="#72da48fd-a612-4a5d-94ea-9761766be7a6"
                 sourceElement="#e28f24ea-c6f0-4fa6-ae8e-080e5fa52fc3"/>
             <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-                id="7e183eb2-89b3-49bc-9414-201792e5971f" name="new current time"
+                id="7e183eb2-89b3-49bc-9414-201892e5971f" name="new current time"
                 target="#64270f20-0db3-46b2-9627-9774c9167f70" source="#668aae30-0c45-49cf-ba27-6cd3943877b1"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
@@ -2109,7 +2109,7 @@
             id="7dcdf8ea-cf11-4709-a682-f0db549ce99c" name="Clock HMI" source="#8ce9d84a-c8d4-4b75-b00c-b3b2e857f109"
             target="#fcb423f6-0fdf-47f8-843d-6da0ad81ec81" kind="FLOW">
           <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
-              id="fdf4475f-f537-4bb9-bc80-94445cefceb4" targetElement="#7e183eb2-89b3-49bc-9414-201792e5971f"
+              id="fdf4475f-f537-4bb9-bc80-94445cefceb4" targetElement="#7e183eb2-89b3-49bc-9414-201892e5971f"
               sourceElement="#7dcdf8ea-cf11-4709-a682-f0db549ce99c"/>
         </ownedComponentExchanges>
         <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
