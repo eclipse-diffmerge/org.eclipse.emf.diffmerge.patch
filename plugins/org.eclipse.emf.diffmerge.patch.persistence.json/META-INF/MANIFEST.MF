@@ -10,3 +10,4 @@ Require-Bundle: com.google.gson;bundle-version="2.2.4",
  com.google.guava;bundle-version="15.0.0"
 Export-Package: org.eclipse.emf.diffmerge.patch.serializer.gson
 Bundle-ClassPath: .
+Automatic-Module-Name: org.eclipse.emf.diffmerge.patch.persistence.json

@@ -20,4 +20,5 @@ Require-Bundle: com.google.guava,
  org.eclipse.emf.diffmerge.patch.tests.persistence.emf;bundle-version="[0.1.0,0.2.0)"
 Import-Package: org.apache.log4j;version="1.2.0"
 Bundle-Vendor: %providerName
+Automatic-Module-Name: org.eclipse.emf.diffmerge.patch.tests.all
 

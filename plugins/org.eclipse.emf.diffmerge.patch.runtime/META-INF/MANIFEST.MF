@@ -18,4 +18,5 @@ Export-Package: org.eclipse.emf.diffmerge.patch.runtime,
  org.eclipse.emf.diffmerge.patch.runtime.identifier,
  org.eclipse.emf.diffmerge.patch.runtime.modelaccess
 Import-Package: org.apache.log4j;version="1.2.15"
+Automatic-Module-Name: org.eclipse.emf.diffmerge.patch.runtime
 

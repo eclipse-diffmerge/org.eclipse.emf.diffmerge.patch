@@ -13,3 +13,4 @@ Export-Package: org.eclipse.emf.diffmerge.patch,
  org.eclipse.emf.diffmerge.patch.persistence,
  org.eclipse.emf.diffmerge.patch.serializer
 Bundle-ClassPath: .
+Automatic-Module-Name: org.eclipse.emf.diffmerge.patch

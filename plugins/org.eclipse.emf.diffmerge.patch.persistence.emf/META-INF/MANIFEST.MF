@@ -22,4 +22,5 @@ Require-Bundle: org.eclipse.emf.diffmerge.patch;bundle-version="[0.1.0,0.2.0)",
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Import-Package: org.apache.log4j;version="1.2.15"
+Automatic-Module-Name: org.eclipse.emf.diffmerge.patch.persistence.emf
 

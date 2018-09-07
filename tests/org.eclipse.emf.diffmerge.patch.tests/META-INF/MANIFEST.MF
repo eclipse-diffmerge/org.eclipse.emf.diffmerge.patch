@@ -9,3 +9,4 @@ Require-Bundle: org.junit;bundle-version="4.12.0",
  org.eclipse.xtend.lib
 Bundle-Vendor: %providerName
 Export-Package: org.eclipse.emf.diffmerge.patch.tests
+Automatic-Module-Name: org.eclipse.emf.diffmerge.patch.tests
