@@ -41,7 +41,7 @@ with [get-window "Modelpatch Application"] {
     }
     get-tree | get-property "getTopItem().getText()" | equals "Cyber Physical System testModel6504822858552 (4)" | verify-true
     get-tree | select "Cyber Physical System testModel6504822858552 (4)"
-    get-button "Copy to the right" | click
+    get-button "Transfer changes to the right" | click
     get-window "Merge Operation" | get-button OK | click
 }
 get-window "Modelpatch Application" | get-window "Merge Operation" | get-group "Required changes" | get-tree 

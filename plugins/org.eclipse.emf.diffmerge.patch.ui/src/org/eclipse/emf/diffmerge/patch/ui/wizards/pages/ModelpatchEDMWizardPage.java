@@ -12,10 +12,10 @@
 package org.eclipse.emf.diffmerge.patch.ui.wizards.pages;
 
 import org.eclipse.compare.CompareEditorInput;
+import org.eclipse.emf.diffmerge.api.Role;
 import org.eclipse.emf.diffmerge.patch.ui.utils.ModelpatchApplicationDTO;
 import org.eclipse.emf.diffmerge.ui.EMFDiffMergeUIPlugin;
 import org.eclipse.emf.diffmerge.ui.viewers.ComparisonViewer;
-import org.eclipse.emf.diffmerge.ui.viewers.DirectedComparisonViewer;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.Viewer;
@@ -55,7 +55,7 @@ public class ModelpatchEDMWizardPage extends WizardPage {
 
     // AbstractComparisonViewer runs into NPE otherwise (and causes WindowBuilder parse error)
     if(EMFDiffMergeUIPlugin.getDefault() != null) {
-      comp = new DirectedComparisonViewer(container) {
+      comp = new ComparisonViewer(container) {
         @Override
         protected void setupToolBars() {
           super.setupToolBars();
@@ -91,6 +91,10 @@ public class ModelpatchEDMWizardPage extends WizardPage {
   public void setVisible(boolean visible) {
     if (visible) {
       dto.prepareDiffNode();
+      // Represent comparison in a "left to right" fashion
+      Role rightRole = dto.diffNode.getRoleForSide(false);
+      dto.diffNode.setReferenceRole(rightRole);
+      dto.diffNode.setDrivingRole(rightRole);
       dto.diffNode.updateDifferenceNumbers();
       comp.setInput(dto.diffNode);
     }
