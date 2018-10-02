@@ -35,7 +35,7 @@ with [get-window "Modelpatch Application"] {
         click
     }
     get-tree | select "Cyber Physical System testModel6504822858552 (10)"
-    get-button "Transfer changes to the right" | click
+    get-button "Apply changes to the right" | click
     get-window "Merge Operation" | get-button OK | click
     get-button Finish | click
 }
