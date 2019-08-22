@@ -1,8 +1,8 @@
 target "EMF DiffMerge Model Patch"
-environment JavaSE-1.7
+environment JavaSE-1.8
 with requirements
 
-location "http://download.eclipse.org/releases/mars/201602261000/" {
+location "http://download.eclipse.org/releases/photon/" {
   org.eclipse.equinox.executable.feature.group
   org.eclipse.platform.sdk
   org.eclipse.jdt.feature.group

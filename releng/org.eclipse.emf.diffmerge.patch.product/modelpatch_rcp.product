@@ -14,7 +14,6 @@
    <windowImages/>
 
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -54,31 +53,24 @@ Contributors:
       <feature id="org.eclipse.help.source"/>
       <feature id="org.eclipse.emf.codegen"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
-      <feature id="org.eclipse.cvs.source"/>
       <feature id="org.eclipse.rcp.source"/>
-      <feature id="org.eclipse.ecf.core.ssl.feature"/>
-      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
       <feature id="org.eclipse.gef"/>
       <feature id="org.eclipse.draw2d"/>
       <feature id="org.eclipse.emf.edit"/>
-      <feature id="org.eclipse.ecf.core.ssl.source.feature"/>
       <feature id="org.eclipse.emf.transaction"/>
       <feature id="org.eclipse.equinox.p2.user.ui.source"/>
       <feature id="org.eclipse.emf.codegen.ui"/>
-      <feature id="org.eclipse.ecf.core.source.feature"/>
       <feature id="org.eclipse.emf.databinding.edit"/>
       <feature id="org.eclipse.emf.common.source"/>
       <feature id="org.eclipse.jdt.source"/>
       <feature id="org.eclipse.emf.codegen.ecore"/>
       <feature id="org.eclipse.emf.converter"/>
       <feature id="org.eclipse.emf.edit.ui"/>
-      <feature id="org.eclipse.cvs"/>
       <feature id="org.eclipse.equinox.p2.rcp.feature"/>
       <feature id="org.eclipse.ecf.filetransfer.feature"/>
       <feature id="org.eclipse.emf.workspace"/>
       <feature id="org.eclipse.equinox.p2.rcp.feature.source"/>
       <feature id="org.eclipse.emf.ecore.source"/>
-      <feature id="org.eclipse.ecf.filetransfer.source.feature"/>
       <feature id="org.eclipse.pde"/>
       <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature"/>
       <feature id="org.eclipse.equinox.p2.core.feature.source"/>
@@ -88,7 +80,6 @@ Contributors:
       <feature id="org.eclipse.platform.source"/>
       <feature id="org.eclipse.pde.source"/>
       <feature id="org.eclipse.emf.mapping"/>
-      <feature id="org.eclipse.ecf.filetransfer.ssl.source.feature"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
@@ -97,9 +88,7 @@ Contributors:
       <feature id="org.eclipse.gmf.runtime.notation"/>
       <feature id="org.eclipse.ecf.core.feature"/>
       <feature id="org.eclipse.emf.ecore.editor"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature"/>
       <feature id="org.eclipse.emf.mapping.ecore.editor"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient4.source.feature"/>
       <feature id="org.eclipse.emf.databinding"/>
       <feature id="org.eclipse.emf.ecore.edit"/>
       <feature id="org.eclipse.emf.validation"/>

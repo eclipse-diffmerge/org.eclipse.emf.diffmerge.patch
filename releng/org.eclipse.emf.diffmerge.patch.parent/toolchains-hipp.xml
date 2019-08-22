@@ -6,7 +6,7 @@
     </provides>
     <configuration>
       <!-- Path to JDK; JRE will not work! -->
-      <jdkHome>/opt/public/common/jdk1.7.0-latest</jdkHome>
+      <jdkHome>/opt/tools/java/oracle/jdk-7/latest</jdkHome>
       <!-- Boot classpath setting is required, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=461239#c5 -->
       <bootClassPath>
         <includes>
@@ -24,7 +24,7 @@
     </provides>
     <configuration>
       <!-- Path to JDK; JRE will not work! -->
-      <jdkHome>/opt/public/common/jdk1.8.0_x64-latest</jdkHome>
+      <jdkHome>/opt/tools/java/oracle/jdk-8/latest</jdkHome>
       <!-- Boot classpath setting is required, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=461239#c5 -->
       <bootClassPath>
         <includes>
