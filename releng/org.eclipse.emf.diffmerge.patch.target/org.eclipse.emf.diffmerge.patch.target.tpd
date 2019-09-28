@@ -21,7 +21,7 @@ location "http://download.eclipse.org/viatra/updates/release/1.6.0" {
 }
 
 location "http://download.eclipse.org/cbi/updates/license/" {
-  org.eclipse.license.feature.group
+  org.eclipse.license.feature.group [2.0.2.v20181016-2210,2.0.2.v20181016-2210]
 }
 
 location "http://download.eclipse.org/viatra/examples/cps/" {
