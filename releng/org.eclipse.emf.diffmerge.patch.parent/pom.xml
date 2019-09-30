@@ -161,6 +161,29 @@
               </execution>
             </executions>
           </plugin>
+		  <plugin>
+			<groupId>org.eclipse.tycho</groupId>
+			<artifactId>tycho-p2-plugin</artifactId>
+			<version>${tychoVersion}</version>
+			<executions>
+			  <execution>
+				<id>default-p2-metadata-default</id>
+				<configuration>
+				  <attachP2Metadata>false</attachP2Metadata>
+				</configuration>
+			  </execution>
+			  <execution>
+				<id>attach-p2-metadata</id>
+				<phase>package</phase>
+				<goals>
+				  <goal>p2-metadata</goal>
+				</goals>
+			  </execution>
+			</executions>
+			<configuration>
+			  <defaultP2Metadata>false</defaultP2Metadata>
+			</configuration>
+		  </plugin>
         </plugins>
       </build>
       <pluginRepositories>
@@ -204,6 +227,7 @@
               <relativePath>org.eclipse.emf.diffmerge.patch.target/pom.xml</relativePath>
             </artifact>
           </target>
+		  <includePackedArtifacts>true</includePackedArtifacts>
          </configuration>
       </plugin>
       <plugin>
