@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="EMF DiffMerge Model Patch" sequenceNumber="1568126316">
+<target name="EMF DiffMerge Model Patch" sequenceNumber="1628509241">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.0.v20180518-2029"/>
-      <unit id="org.eclipse.platform.sdk" version="4.8.0.I20180611-0500"/>
-      <unit id="org.eclipse.jdt.feature.group" version="3.14.0.v20180611-0500"/>
-      <unit id="org.eclipse.pde.feature.group" version="3.13.100.v20180611-0826"/>
-      <unit id="org.eclipse.sdk.feature.group" version="4.8.0.v20180611-0826"/>
-      <unit id="org.eclipse.platform.feature.group" version="4.8.0.v20180611-0656"/>
-      <unit id="org.eclipse.emf.sdk.feature.group" version="2.14.0.v20180529-1157"/>
-      <unit id="org.eclipse.gmf.feature.group" version="1.12.0.201806010809"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.8.1200.v20210527-0259"/>
+      <unit id="org.eclipse.platform.sdk" version="4.20.0.I20210611-1600"/>
+      <unit id="org.eclipse.jdt.feature.group" version="3.18.800.v20210611-1600"/>
+      <unit id="org.eclipse.pde.feature.group" version="3.14.800.v20210611-1636"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.20.0.v20210611-1636"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.20.0.v20210611-1600"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.26.0.v20210506-1425"/>
+      <unit id="org.eclipse.gmf.feature.group" version="1.13.0.202004160913"/>
       <unit id="org.eclipse.xtend.feature.group" version="2.2.0.v201605260315"/>
-      <unit id="com.google.gson" version="2.8.2.v20180104-1110"/>
-      <unit id="org.junit" version="4.12.0.v201504281640"/>
-      <repository location="http://download.eclipse.org/releases/photon/"/>
+      <unit id="com.google.gson" version="2.8.6.v20201231-1626"/>
+      <unit id="org.junit" version="4.13.0.v20200204-1500"/>
+      <repository location="http://download.eclipse.org/releases/2021-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.viatra.transformation.runtime.emf.feature.feature.group" version="1.6.0.201706141007"/>
@@ -30,5 +30,5 @@
       <repository location="http://download.eclipse.org/viatra/examples/cps/"/>
     </location>
   </locations>
-  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>
 </target>

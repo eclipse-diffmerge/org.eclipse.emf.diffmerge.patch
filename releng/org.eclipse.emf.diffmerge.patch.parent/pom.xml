@@ -21,12 +21,12 @@
   <packaging>pom</packaging>
 
   <properties>
-    <tycho.version>1.4.0</tycho.version>
+    <tycho.version>2.0.0</tycho.version>
     <tycho.extras.version>${tycho.version}</tycho.extras.version>
     <xtend.compiler.version>2.17.0</xtend.compiler.version>
-    <cbi.jarsigner.version>1.1.3</cbi.jarsigner.version>
+    <cbi.jarsigner.version>1.3.2</cbi.jarsigner.version>
     <rcptt.version>2.3.0</rcptt.version>
-    <java.version>1.8</java.version>
+    <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
@@ -122,19 +122,6 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.eclipse.tycho.extras</groupId>
-            <artifactId>tycho-pack200a-plugin</artifactId>
-            <version>${tycho.version}</version>
-            <executions>
-              <execution>
-                <id>pack200-normalize</id>
-                <goals>
-                  <goal>normalize</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
             <groupId>org.eclipse.cbi.maven.plugins</groupId>
             <artifactId>eclipse-jarsigner-plugin</artifactId>
             <version>${cbi.jarsigner.version}</version>
@@ -145,19 +132,6 @@
                   <goal>sign</goal>
                 </goals>
                 <phase>verify</phase>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.eclipse.tycho.extras</groupId>
-            <artifactId>tycho-pack200b-plugin</artifactId>
-            <version>${tycho.version}</version>
-            <executions>
-              <execution>
-                <id>pack200-pack</id>
-                <goals>
-                  <goal>pack</goal>
-                </goals>
               </execution>
             </executions>
           </plugin>
@@ -219,6 +193,7 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho.version}</version>
         <configuration>
+          <executionEnvironment>JavaSE-11</executionEnvironment>
           <target>
             <artifact>
               <groupId>org.eclipse.emf.diffmerge.patch</groupId>

@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.eclipse.emf.diffmerge.patch.persistence.emf;singleton:=
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.eclipse.emf.diffmerge.patch.persistence.emf,
  org.eclipse.emf.diffmerge.patch.persistence.emf.emodelpatch,
  org.eclipse.emf.diffmerge.patch.persistence.emf.emodelpatch.impl,
